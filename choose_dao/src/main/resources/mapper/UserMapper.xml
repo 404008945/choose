@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.choose.dao.UserDao">
+  <resultMap id="BaseResultMap" type="com.choose.entity.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from `user`
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.choose.entity.User" useGeneratedKeys="true">
+    insert into `user` (name, phone,password,account)
+    values (#{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},#{password},#{account})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.choose.entity.User">
+    update `user`
+    set name = #{name,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      password=#{password},
+      account=#{account}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, name, phone,password,account
+    from `user`
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, phone,password,account
+    from `user`
+  </select>
+  <select id="selectByAdmin" resultMap="BaseResultMap">
+    select id, name, phone,account
+    from `user`
+    where id=#{id}
+  </select>
+
+  <select id="selectByAccount" resultMap="BaseResultMap">
+    select id, name, phone,account,password
+    from `user`
+    where account=#{account}
+  </select>
+</mapper>
