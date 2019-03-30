@@ -1,4 +1,4 @@
-package com.choose.controller;
+﻿package com.choose.controller;
 
 import com.choose.entity.Admin;
 import com.choose.service.AdminService;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/admin")
+@RequestBody
 public class AdminController {
     @Autowired
     private AdminService adminService;
