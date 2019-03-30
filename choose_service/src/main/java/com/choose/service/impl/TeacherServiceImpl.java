@@ -31,4 +31,8 @@ public class TeacherServiceImpl implements TeacherService {
     public int editByPrimaryKey(Teacher record) {
         return teacherDao.updateByPrimaryKey(record);
     }
+
+    public Teacher getByAccount(String account) {
+        return teacherDao.selectByAccount(account);
+    }
 }

@@ -1,4 +1,4 @@
-﻿package com.choose.controller;
+package com.choose.controller;
 
 import com.choose.entity.Admin;
 import com.choose.service.AdminService;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//修改bug
+
 @Controller
 @RequestMapping("/admin")
 public class AdminController {

@@ -6,34 +6,42 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from `teacher`
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.choose.entity.Teacher" useGeneratedKeys="true">
-    insert into `teacher` (name, phone,password)
-    values (#{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},#{password})
+    insert into `teacher` (name, phone,password,account)
+    values (#{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},#{password},#{account})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.choose.entity.Teacher">
     update `teacher`
     set name = #{name,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      password=#{password}
+      password=#{password},
+      account=#{account}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, name, phone,password
+    select id, name, phone,password,account
     from `teacher`
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-    select id, name, phone,password
+    select id, name, phone,password,account
     from `teacher`
   </select>
   <select id="selectByAdmin" resultMap="BaseResultMap">
-    select id, name, phone
+    select id, name, phone,account
     from `teacher`
     where id=#{id}
+  </select>
+
+  <select id="selectByAccount" resultMap="BaseResultMap">
+    select id, name, phone,account,password
+    from `teacher`
+    where account=#{account}
   </select>
 </mapper>

@@ -1,11 +1,9 @@
 import com.choose.dao.AdminDao;
-import com.choose.entity.Admin;
-import com.choose.entity.Choose;
-import com.choose.entity.Course;
-import com.choose.entity.Teacher;
+import com.choose.entity.*;
 import com.choose.info.AdminInfo;
 import com.choose.service.AdminService;
 import com.choose.service.ChooseService;
+import com.choose.service.LoginService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +22,8 @@ public class TestDemo {
     private AdminService adminService;
     @Autowired
     private ChooseService chooseService;
+    @Autowired
+    private LoginService loginService;
     @Test
     public void test2()
     {
@@ -33,7 +33,16 @@ public class TestDemo {
             System.out.println(adminInfo);
         }
     }
-
+    //登录功能测试
+    @Test
+    public void test4()
+    {
+        User user = loginService.login("gea", "geag",0);
+        Teacher teacher=loginService.login("123","123",1);
+        System.out.println(user);
+        System.out.println(teacher);
+    }
+    //安排课程功能测试
     @Test
     public void test3() throws ParseException {
         Admin admin=new Admin();

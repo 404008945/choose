@@ -1,6 +1,7 @@
 package com.choose.service.impl;
 
 import com.choose.dao.AdminDao;
+import com.choose.dao.ChooseDao;
 import com.choose.dao.TeacherCourseDao;
 import com.choose.entity.Admin;
 import com.choose.entity.TeacherCourse;
@@ -19,6 +20,10 @@ public class AdminServiceImpl implements AdminService {
 
     @Autowired
     private AdminDao adminDao;
+
+    @Autowired
+    private ChooseDao chooseDao;
+
     @Autowired
     private TeacherCourseDao teacherCourseDao;
     public int removeByPrimaryKey(Integer id) {
@@ -83,6 +88,8 @@ public class AdminServiceImpl implements AdminService {
             Date endTime = admin.getEndTime();
             String endTimeStr=format.format(endTime);
             adminInfo.setDay(day);
+            adminInfo.setAdminId(admin.getId());
+            adminInfo.setRemainSeats(30-chooseDao.selectRemainSeatsByAdminId(admin.getId()));
             adminInfo.setBeginTime(beginTimeStr);
             adminInfo.setEndTime(endTimeStr);
             adminInfo.setCourseName(admin.getCourse().getName());

@@ -7,6 +7,10 @@ public class AdminInfo {
     private Integer day;
     private String courseName;
     private String teacherName;
+    //剩余座位
+    private Integer remainSeats;
+    //课程id用于删除使用
+    private Integer adminId;
 
     public String getBeginTime() {
         return beginTime;
@@ -48,6 +52,22 @@ public class AdminInfo {
         this.teacherName = teacherName;
     }
 
+    public Integer getRemainSeats() {
+        return remainSeats;
+    }
+
+    public void setRemainSeats(Integer remainSeats) {
+        this.remainSeats = remainSeats;
+    }
+
+    public Integer getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
+    }
+
     @Override
     public String toString() {
         return "AdminInfo{" +
@@ -56,6 +76,8 @@ public class AdminInfo {
                 ", day=" + day +
                 ", courseName='" + courseName + '\'' +
                 ", teacherName='" + teacherName + '\'' +
+                ", remainSeats=" + remainSeats +
+                ", adminId=" + adminId +
                 '}';
     }
 }

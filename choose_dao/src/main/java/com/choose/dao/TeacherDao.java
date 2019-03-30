@@ -16,4 +16,6 @@ public interface TeacherDao {
     List<Teacher> selectAll();
 
     int updateByPrimaryKey(Teacher record);
+
+    Teacher selectByAccount(String account);
 }

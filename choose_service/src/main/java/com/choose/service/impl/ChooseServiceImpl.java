@@ -60,4 +60,8 @@ public class ChooseServiceImpl implements ChooseService {
     public List<Choose> getByUserId(Integer userId) {
         return chooseDao.selectByUserId(userId);
     }
+
+    public Integer getRemainSeatsByAdminId(Integer adminId) {
+        return chooseDao.selectRemainSeatsByAdminId(adminId);
+    }
 }
