@@ -7,10 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+//修改bug
 @Controller
 @RequestMapping("/admin")
-@RequestBody
 public class AdminController {
     @Autowired
     private AdminService adminService;
