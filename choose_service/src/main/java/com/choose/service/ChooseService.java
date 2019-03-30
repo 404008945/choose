@@ -22,4 +22,6 @@ public interface ChooseService {
     List<Integer> getRemainSeats(Integer adminId);
 
     List<Choose> getByUserId(Integer userId);
+
+    Integer getRemainSeatsByAdminId(Integer adminId);
 }

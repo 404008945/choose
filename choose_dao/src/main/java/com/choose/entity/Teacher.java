@@ -9,6 +9,8 @@ public class Teacher {
 
     private String password;
 
+    private String account;
+
     public Integer getId() {
         return id;
     }
@@ -41,6 +43,14 @@ public class Teacher {
         this.password = password;
     }
 
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
     @Override
     public String toString() {
         return "Teacher{" +
@@ -48,6 +58,7 @@ public class Teacher {
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", password='" + password + '\'' +
+                ", account='" + account + '\'' +
                 '}';
     }
 }

@@ -17,4 +17,6 @@ public interface TeacherService {
     List<Teacher> getAll();
 
     int editByPrimaryKey(Teacher record);
+
+    Teacher getByAccount(String account);
 }

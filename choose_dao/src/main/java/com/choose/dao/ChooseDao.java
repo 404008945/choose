@@ -22,4 +22,7 @@ public interface ChooseDao {
 
     //获取某一用户的所有选课情况
     List<Choose> selectByUserId(Integer userId);
+
+    //通过管理id获取剩余座位
+    Integer selectRemainSeatsByAdminId(Integer adminId);
 }
