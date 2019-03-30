@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="bs/css/bootstrap.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script src="bs/js/jquery.min.js"></script>
+		<script src="bs/js/bootstrap.js"></script>
+		
+		<title>管理全部课程</title>
+	</head>
+	<body>
+		<!--可以展示出所有的课程  用于管理员的管理和教师对课程的参考 -->
+		<div class="container">
+
+            <ul class="nav nav-tabs tab">
+                <li class="active" index="0">
+                    <a href="#">诗词评论</a>
+                </li>
+                <li index="1">
+                    <a href="#">诗词赏析</a></li>
+                <li index="2">
+                    <a href="#">诗词注释</a></li>
+                <li index="3">
+                    <a href="#">诗人简介</a>
+                </li>
+                <li index="4">
+                    <a href="#">创作背景</a></li>
+            </ul>
+			</div>
+		
+		
+	</body>
+	<script>
+    $(".nav li").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".con>div").eq($(this).attr("index")).removeClass("hide").siblings().addClass("hide");
+        return false;
+    })
+
+    window.onresize = function () {
+        //  alert(1);
+        changeDivHeight();
+    }
+
+    function changeDivHeight() {
+        var w = document.documentElement.clientWidth;//获取页面可见高度
+
+        if (w < 500) {
+            $(".tab li").css({width: '100%'});
+        } else {
+            //  alert(1);
+            $(".tab li").css({width: '20%'});
+        }
+    }
+    changeDivHeight();
+</script>
+</html>

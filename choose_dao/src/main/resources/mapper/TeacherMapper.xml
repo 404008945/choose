@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.choose.dao.TeacherDao">
+  <resultMap id="BaseResultMap" type="com.choose.entity.Teacher">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from `teacher`
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.choose.entity.Teacher" useGeneratedKeys="true">
+    insert into `teacher` (name, phone,password)
+    values (#{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},#{password})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.choose.entity.Teacher">
+    update `teacher`
+    set name = #{name,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      password=#{password}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, name, phone,password
+    from `teacher`
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, phone,password
+    from `teacher`
+  </select>
+  <select id="selectByAdmin" resultMap="BaseResultMap">
+    select id, name, phone
+    from `teacher`
+    where id=#{id}
+  </select>
+</mapper>
