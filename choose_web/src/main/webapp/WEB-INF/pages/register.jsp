@@ -152,7 +152,7 @@ p.center {
 		<div id="login_form" class="form">
 			
 		<form id="register" class="register-form"  width="100%">
-				<input type="text" placeholder="用户名" id="r_user_name"/>
+				<input type="text" placeholder="账户" id="r_user_name"/>
 				<input type="password" placeholder="密码" id="r_password" />
 				<input type="text" placeholder="真实姓名" id="t_name"/>
 				<input type="text" placeholder="手机号" id="p_num"/>
