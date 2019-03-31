@@ -35,7 +35,7 @@ public class AdminServiceImpl implements AdminService {
         System.out.println(record);
         Integer day = record.getDay();
         Integer courseId= record.getCourse().getId();
-        List<Admin> admins = adminDao.selectByCourseId(courseId,day);
+        List<Admin> admins = adminDao.selectByCourseIdAndDay(courseId,day);
         boolean flag=true;
         if(admins.size()!=0)
         {
@@ -99,8 +99,8 @@ public class AdminServiceImpl implements AdminService {
         return infos;
     }
 
-    public List<Admin> getByCourseId(Integer courseId,Integer day) {
-        return adminDao.selectByCourseId(courseId,day);
+    public List<Admin> getByCourseIdAndDay(Integer courseId,Integer day) {
+        return adminDao.selectByCourseIdAndDay(courseId,day);
     }
 
     public List<AdminInfo> getByTeacherId(Integer teacherId) {
@@ -122,5 +122,9 @@ public class AdminServiceImpl implements AdminService {
             infos.add(adminInfo);
         }
         return infos;
+    }
+
+    public List<Admin> getByCourseId(Integer courseId) {
+        return adminDao.selectByCourseId(courseId);
     }
 }

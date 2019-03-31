@@ -4,8 +4,6 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-
-		
 		<title></title>
 	</head>
 	<body>
@@ -14,8 +12,6 @@
 		<div id="canvasW" style="width: 1000px;height: 700px;margin: 0 auto;margin-top: 20px;position: relative;margin-bottom: 20px;">
            <canvas id="myCanvas"></canvas>
        </div>
-	 
-	
 	<script>
 	function Course(startTime,endTime,courseName,dateNum,courseId)//   7:20    精确到分钟
 	{
@@ -24,7 +20,6 @@
 		this.courseName=courseName;
 		this.dateNum=dateNum;//当前的偏移天数
 		this.courseId=courseId;
-		
 	}
 		var  course=new Course('7:00','8:40','FCC前端培训',0,1);
 		var courseArr=new Array();

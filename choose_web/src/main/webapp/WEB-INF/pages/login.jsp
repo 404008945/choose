@@ -150,10 +150,10 @@ p.center {
 <div id="wrapper" class="login-page" style="width:95%;">
 		<div id="login_form" class="form">
 		
-		<form id="login" class="login-form" width="100%">
-				<input type="text" placeholder="用户名" id="user_name"/>
-				<input type="password" placeholder="密码" id="password"/>
-				<p id="logintip" class="text-danger" ></p>
+		<form id="login" action="/user/login" method="post" class="login-form" width="100%">
+				<input type="text" required="required" name="account" value="${user.account}" placeholder="用户名" id="user_name"/>
+				<input type="password" required="required" name="password" value="${user.password}" placeholder="密码" id="password"/>
+				<p id="logintip" class="text-danger" >${msg}</p>
 				<button id="submit">登　录</button>
 				<p class="message">还没有账户? <a href="#">立刻创建</a></p>
 			</form>

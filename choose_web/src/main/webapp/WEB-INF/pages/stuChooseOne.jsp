@@ -13,13 +13,13 @@
 	<jsp:include page="nav.jsp"/>
 <div class="container">
 		<h2 class="text-center">请选择您要预约的课程</h2>
-<form style="margin-top: 20%;" action="">
+<form style="margin-top: 20%;" action="/user/chooseOne">
   <div class="form-group">
    <label for="exampleInputName2">请选课程</label>
-  <select class="form-control">
-  <option>FCC</option>
-  <option>C++</option>
-  <option>JAVA</option>
+  <select class="form-control" name="courseId">
+	  <c:forEach var="course" items="${courses}">
+		  <option value="${course.id}">${course.name}</option>
+	  </c:forEach>
 </select>
   </div>
   <input type="submit" class="btn btn-primary" style="margin-top: 30px;" value="进入预约页面"/>

@@ -51,7 +51,7 @@
     order by end_time desc
   </select>
 
-    <select id="selectByCourseId" resultMap="BaseResultMap">
+    <select id="selectByCourseIdAndDay" resultMap="BaseResultMap">
     select id, begin_time, end_time, total_seat, `day`,course_id,teacher_id
     from `admin`
     where `course_id`=#{courseId} and `day`=#{day}
@@ -62,4 +62,11 @@
     from `admin`
     where `teacher_id`=#{teacherId}
   </select>
+
+    <select id="selectByCourseId" resultMap="BaseResultMap">
+    select id, begin_time, end_time, total_seat, `day`,course_id,teacher_id
+    from `admin`
+    where `course_id`=#{courseId}
+  </select>
+
 </mapper>

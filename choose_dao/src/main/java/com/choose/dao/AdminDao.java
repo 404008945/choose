@@ -23,8 +23,12 @@ public interface AdminDao {
     List<Admin> selectByDay(Integer day);
 
     //通过课程名和天数获取安排信息
-    List<Admin> selectByCourseId(@Param("courseId") Integer courseId, @Param("day") Integer day);
+    List<Admin> selectByCourseIdAndDay(@Param("courseId") Integer courseId, @Param("day") Integer day);
 
     //获取某个老师的所有课程
     List<Admin> selectByTeacherId(Integer teacher);
+
+    //获取一周时间内某门课的安排
+    List<Admin> selectByCourseId(@Param("courseId") Integer courseId);
+
 }

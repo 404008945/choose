@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>带摇晃特效的扁平风格登录注册表单界面</title>
+	<title>登录</title>
 	<style type="text/css">
 .login-page {
 	width: 360px;
@@ -148,17 +148,18 @@ p.center {
 	<body>
 	<jsp:include page="nav.jsp"/>
 <div id="wrapper" class="login-page" style="width:95%;">
-			
 		<div id="login_form" class="form">
-			
-		<form id="register" class="register-form"  width="100%">
-				<input type="text" placeholder="账户" value="geage" id="r_user_name"/>
-				<input type="password" placeholder="密码" id="r_password" />
-				<input type="text" placeholder="真实姓名" id="t_name"/>
-				<input type="text" placeholder="手机号" id="p_num"/>
+		<form id="register" action="/user/register" method="post" class="register-form"  width="100%">
+			<c:if test="${msg!=null}">
+				<p>${msg}</p>
+			</c:if>
+			<input type="text" required="required" name="account" placeholder="账号(数字和字母组成,用户登录)" id="r_user_name"/>
+				<input type="password" required="required" name="password" placeholder="密码" id="r_password" />
+				<input type="text" required="required" name="name" value="${user.name}" placeholder="真实姓名" id="t_name"/>
+				<input type="text" required="required" name="phone" value="${user.phone}" placeholder="手机号" id="p_num"/>
 				<p id="tip" class="text-danger" ></p>
-				<button id="create">创建账户</button>
-				<p class="message">已经有了一个账户? <a href="#">立刻登录</a></p>
+				<button id="create" type="submit">创建账户</button>
+				<p class="message">已经有了一个账户? <a href="#">直接登录吧</a></p>
 			</form>
 	</div>
 </div>
