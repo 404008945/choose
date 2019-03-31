@@ -155,7 +155,7 @@ p.center {
 				<input type="password" required="required" name="password" value="${user.password}" placeholder="密码" id="password"/>
 				<p id="logintip" class="text-danger" >${msg}</p>
 				<button id="submit">登　录</button>
-				<p class="message">还没有账户? <a href="#">立刻创建</a></p>
+				<p class="message">还没有账户? <a href="/user/registerPage">立刻创建</a></p>
 			</form>
 	</div>
 </div>

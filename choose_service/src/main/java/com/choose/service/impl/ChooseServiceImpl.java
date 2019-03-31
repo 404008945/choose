@@ -3,10 +3,12 @@ package com.choose.service.impl;
 import com.choose.dao.AdminDao;
 import com.choose.dao.ChooseDao;
 import com.choose.entity.Choose;
+import com.choose.info.ChooseInfo;
 import com.choose.service.ChooseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,11 +59,32 @@ public class ChooseServiceImpl implements ChooseService {
         return list1;
     }
 
-    public List<Choose> getByUserId(Integer userId) {
-        return chooseDao.selectByUserId(userId);
+    public List<ChooseInfo> getByUserId(Integer userId) {
+        SimpleDateFormat format=new SimpleDateFormat("HH:mm");
+        List<Choose> chooses = chooseDao.selectByUserId(userId);
+        List<ChooseInfo> infos=new ArrayList<ChooseInfo>();
+        for(Choose choose:chooses)
+        {
+            ChooseInfo chooseInfo=new ChooseInfo();
+            chooseInfo.setAdminId(choose.getAdmin().getId());
+            String beginTime=format.format(choose.getAdmin().getBeginTime());
+            String endTime=format.format(choose.getAdmin().getEndTime());
+            chooseInfo.setBeginTime(beginTime);
+            chooseInfo.setCourseName(choose.getAdmin().getCourse().getName());
+            chooseInfo.setSeat(choose.getSeatNumber());
+            chooseInfo.setDay(choose.getAdmin().getDay());
+            chooseInfo.setEndTime(endTime);
+            chooseInfo.setTeacherName(choose.getAdmin().getTeacher().getName());
+            infos.add(chooseInfo);
+        }
+        return infos;
     }
 
     public Integer getRemainSeatsByAdminId(Integer adminId) {
         return chooseDao.selectRemainSeatsByAdminId(adminId);
+    }
+
+    public int removeByUserIdAndAdminId(Integer userId, Integer adminId) {
+        return chooseDao.deleteByUserIdAndAdminId(userId,adminId);
     }
 }

@@ -2,6 +2,7 @@ package com.choose.service;
 
 
 import com.choose.entity.Choose;
+import com.choose.info.ChooseInfo;
 
 import java.util.List;
 
@@ -21,7 +22,9 @@ public interface ChooseService {
     //获取某一时间点的剩余座位号
     List<Integer> getRemainSeats(Integer adminId);
 
-    List<Choose> getByUserId(Integer userId);
+    List<ChooseInfo> getByUserId(Integer userId);
 
     Integer getRemainSeatsByAdminId(Integer adminId);
+
+    int removeByUserIdAndAdminId(Integer userId,Integer adminId);
 }

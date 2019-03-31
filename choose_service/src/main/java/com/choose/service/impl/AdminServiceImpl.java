@@ -33,6 +33,7 @@ public class AdminServiceImpl implements AdminService {
     public int add(Admin record) {
         //进行时间判断,防止时间段重合
         System.out.println(record);
+        record.setTotalSeat(30);
         Integer day = record.getDay();
         Integer courseId= record.getCourse().getId();
         List<Admin> admins = adminDao.selectByCourseIdAndDay(courseId,day);

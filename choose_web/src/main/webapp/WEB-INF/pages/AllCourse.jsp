@@ -34,78 +34,81 @@
 <body>
 <jsp:include page="nav.jsp"/>
 <!--可以展示出所有的课程  用于管理员的管理和教师对课程的参考 -->
+<h1>hello</h1>
 <div class="container">
     <h3 class="text-center">全部课程</h3>
-
+    <c:if test="${message!=null}">
+        <p>${message}</p>
+    </c:if>
     <ul class="nav nav-tabs tab">
         <c:if test="${day==1}">
             <li class="active" index="0">
-                <a href="/manage/detailByDay/1">周一</a>
+                <a href="/admin/detailByDay/1">周一</a>
             </li>
         </c:if>
         <c:if test="${day!=1}">
             <li index="0">
-                <a href="/manage/detailByDay/1">周一</a>
+                <a href="/admin/detailByDay/1">周一</a>
             </li>
         </c:if>
         <c:if test="${day==2}">
             <li class="active" index="0">
-                <a href="/manage/detailByDay/2">周二</a>
+                <a href="/admin/detailByDay/2">周二</a>
             </li>
         </c:if>
         <c:if test="${day!=2}">
             <li index="0">
-                <a href="/manage/detailByDay/2">周二</a>
+                <a href="/admin/detailByDay/2">周二</a>
             </li>
         </c:if>
         <c:if test="${day==3}">
             <li class="active" index="0">
-                <a href="/manage/detailByDay/3">周三</a>
+                <a href="/admin/detailByDay/3">周三</a>
             </li>
         </c:if>
         <c:if test="${day!=3}">
             <li index="0">
-                <a href="/manage/detailByDay/3">周三</a>
+                <a href="/admin/detailByDay/3">周三</a>
             </li>
         </c:if>
         <c:if test="${day==4}">
             <li class="active" index="0">
-                <a href="/manage/detailByDay/4">周四</a>
+                <a href="/admin/detailByDay/4">周四</a>
             </li>
         </c:if>
         <c:if test="${day!=4}">
             <li index="0">
-                <a href="/manage/detailByDay/4">周四</a>
+                <a href="/admin/detailByDay/4">周四</a>
             </li>
         </c:if>
         <c:if test="${day==5}">
             <li class="active" index="0">
-                <a href="/manage/detailByDay/5">周五</a>
+                <a href="/admin/detailByDay/5">周五</a>
             </li>
         </c:if>
         <c:if test="${day!=5}">
             <li index="0">
-                <a href="/manage/detailByDay/5">周五</a>
+                <a href="/admin/detailByDay/5">周五</a>
             </li>
         </c:if>
         <c:if test="${day==6}">
             <li class="active" index="0">
-                <a href="/manage/detailByDay/6">周六</a>
+                <a href="/admin/detailByDay/6">周六</a>
             </li>
         </c:if>
         <c:if test="${day!=6}">
             <li index="0">
-                <a href="/manage/detailByDay/6">周六</a>
+                <a href="/admin/detailByDay/6">周六</a>
             </li>
         </c:if>
         <c:if test="${day==7}">
             <li class="active" index="0">
-                <a href="/manage/detailByDay/7">周日</a>
+                <a href="/admin/detailByDay/7">周日</a>
             </li>
         </c:if>
         <c:if test="${day!=7}">
             <li index="0">
-                <a href="/manage/detailByDay/7">周日</a>
+                <a href="/admin/detailByDay/7">周日</a>
             </li>
         </c:if>
     </ul>
@@ -121,7 +124,7 @@
                         </h3>
                         <p style="display: inline-block; ">剩余座位:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
                         </p>
-                        <button class="btn" onclick="location.href='/manage/removeCourse/${info.adminId}'" style="float: right; float: bottom;">删除</button>
+                        <button class="btn" onclick="location.href='/admin/removeCourse/${info.adminId}'" style="float: right; float: bottom;">删除</button>
                     </div>
                 </div>
             </c:forEach>

@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="example-navbar-collapse">
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">选课</a></li>
-            <li><a href="#">新建课程(教师)</a></li>
+            <li><a href="/admin/addPage">新建课程(教师)</a></li>
 	
 			<li><a href="#">管理课程(管理员)</a></li>
             <li class="dropdown">

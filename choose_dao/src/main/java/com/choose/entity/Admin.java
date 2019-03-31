@@ -1,12 +1,14 @@
 package com.choose.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Admin {
     private Integer id;
-
+    @DateTimeFormat(pattern = "HH:mm")
     private Date beginTime;
-
+    @DateTimeFormat(pattern = "HH:mm")
     private Date endTime;
 
     private Integer totalSeat;

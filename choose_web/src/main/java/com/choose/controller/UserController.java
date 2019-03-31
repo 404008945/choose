@@ -1,16 +1,12 @@
 package com.choose.controller;
 
-import com.choose.entity.Admin;
-import com.choose.entity.Course;
-import com.choose.entity.Teacher;
-import com.choose.entity.User;
-import com.choose.service.AdminService;
-import com.choose.service.CourseService;
-import com.choose.service.LoginService;
-import com.choose.service.UserService;
+import com.choose.entity.*;
+import com.choose.info.ChooseInfo;
+import com.choose.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +26,9 @@ public class UserController {
 
     @Autowired
     private AdminService adminService;
+
+    @Autowired
+    private ChooseService chooseService;
     //用户注册功能
     @RequestMapping("/registerPage")
     public String registerPage()
@@ -78,6 +77,8 @@ public class UserController {
                     List<Course> courses = courseService.getAll();
                     model.addAttribute("courses",courses);
                     request.getSession().setAttribute("login",user);
+                    //设置学生标记
+                    request.getSession().setAttribute("type",0);
                     return "stuChooseOne";
                 }
 
@@ -88,6 +89,9 @@ public class UserController {
                     //登录成功
                     //课程管理界面
                     request.getSession().setAttribute("login",teacher);
+                    //设置老师标记
+                    request.getSession().setAttribute("type",1);
+                    return "redirect:/admin/detailByDay/1";
                 }
             }
         }
@@ -104,11 +108,46 @@ public class UserController {
         return "index";
     }
 
+    //获取用户所有选课信息
+    @RequestMapping("/choosed")
+    public String getAllChoosed(Model model,HttpServletRequest request)
+    {
+        //模拟注入学生，实际上从session中取
+        User user=new User();
+        user.setId(2);
+        request.getSession().setAttribute("login",user);
+        User user1 = (User) request.getSession().getAttribute("login");
+        //Admin数组需要时间需要转换
+        List<ChooseInfo> infos = chooseService.getByUserId(user1.getId());
+        if(infos==null)
+        {
+            //该学生尚未选课
+        }else{
+
+        }
+        return "studentChoosed";
+    }
+
     //用户开始选择座位
     @RequestMapping("/chooseSeat")
     public String choose(Model model)
     {
-        
-        return "";
+        Integer adminId=2;
+        //总座位号
+        Integer totalSeat = adminService.getByPrimaryKey(adminId).getTotalSeat();
+        //获取所有剩余座位号
+        List<Integer> remainSeats = chooseService.getRemainSeats(adminId);
+        System.out.println(totalSeat);
+        System.out.println(remainSeats);
+        return "seat";
     }
+
+    //用户删除某次选课，需传递adminId参数
+    @RequestMapping("/remove/{adminId}")
+    public String deleteChoosed(@PathVariable("adminId")Integer adminId)
+    {
+
+        return "forward:/user/choosed";
+    }
+
 }

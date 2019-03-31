@@ -159,7 +159,7 @@ p.center {
 				<input type="text" required="required" name="phone" value="${user.phone}" placeholder="手机号" id="p_num"/>
 				<p id="tip" class="text-danger" ></p>
 				<button id="create" type="submit">创建账户</button>
-				<p class="message">已经有了一个账户? <a href="#">直接登录吧</a></p>
+				<p class="message">已经有了一个账户? <a href="/user/loginPage">直接登录吧</a></p>
 			</form>
 	</div>
 </div>

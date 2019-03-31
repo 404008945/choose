@@ -13,8 +13,6 @@
 		<div id="canvasW" style="width: 1000px;height: 700px;margin: 0 auto;margin-top: 20px;position: relative;margin-bottom: 20px;">
            <canvas id="myCanvas"></canvas>
        </div>
-	 
-	
 	<script>
 		
 		

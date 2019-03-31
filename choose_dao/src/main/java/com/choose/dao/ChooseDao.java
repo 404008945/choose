@@ -1,6 +1,7 @@
 package com.choose.dao;
 
 import com.choose.entity.Choose;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -25,4 +26,7 @@ public interface ChooseDao {
 
     //通过管理id获取剩余座位
     Integer selectRemainSeatsByAdminId(Integer adminId);
+
+    //根据userId和adminId来删除用户的某次选课
+    int deleteByUserIdAndAdminId(@Param("userId") Integer userId, @Param("adminId") Integer adminId);
 }

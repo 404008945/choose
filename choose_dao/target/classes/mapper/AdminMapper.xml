@@ -3,8 +3,8 @@
 <mapper namespace="com.choose.dao.AdminDao">
     <resultMap id="BaseResultMap" type="com.choose.entity.Admin">
         <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="begin_time" jdbcType="TIMESTAMP" property="beginTime"/>
-        <result column="end_time" jdbcType="TIMESTAMP" property="endTime"/>
+        <result column="begin_time" jdbcType="TIME" property="beginTime"/>
+        <result column="end_time" jdbcType="TIME" property="endTime"/>
         <result column="total_seat" jdbcType="INTEGER" property="totalSeat"/>
         <result column="day" jdbcType="INTEGER" property="day"/>
         <association property="course" javaType="com.choose.entity.Course"
@@ -48,10 +48,10 @@
     select id, begin_time, end_time, total_seat, `day`,course_id,teacher_id
     from `admin`
     where `day`=#{day}
-    order by end_time desc
+    order by begin_time
   </select>
 
-    <select id="selectByCourseId" resultMap="BaseResultMap">
+    <select id="selectByCourseIdAndDay" resultMap="BaseResultMap">
     select id, begin_time, end_time, total_seat, `day`,course_id,teacher_id
     from `admin`
     where `course_id`=#{courseId} and `day`=#{day}
@@ -62,4 +62,11 @@
     from `admin`
     where `teacher_id`=#{teacherId}
   </select>
+
+    <select id="selectByCourseId" resultMap="BaseResultMap">
+    select id, begin_time, end_time, total_seat, `day`,course_id,teacher_id
+    from `admin`
+    where `course_id`=#{courseId}
+  </select>
+
 </mapper>

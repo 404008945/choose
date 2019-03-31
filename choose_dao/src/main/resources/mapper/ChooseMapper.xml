@@ -60,4 +60,9 @@
     from choose
     where admin_id=#{adminId};
   </select>
+
+    <delete id="deleteByUserIdAndAdminId">
+        delete from choose
+        where user_id=#{userId} and admin_id=#{adminId}
+    </delete>
 </mapper>
