@@ -105,6 +105,8 @@ public class UserController {
     {
         Integer courseId = Integer.valueOf(request.getParameter("courseId"));
         List<Admin> plans = adminService.getByCourseId(courseId);
+        System.out.println(plans);
+        model.addAttribute("admins",plans);
         return "index";
     }
 

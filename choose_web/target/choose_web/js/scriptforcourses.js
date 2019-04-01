@@ -36,6 +36,10 @@ ctx.moveTo(0,0)
 ctx.lineTo(twidth,0);
 ctx.moveTo(0,30);
 ctx.lineTo(twidth,30);
+if(nowDay===0)
+{
+	nowDay=7;
+}
 for(var i=0;i<7;i++)   //绘图7次
 {
 	ctx.fillStyle = '#000';

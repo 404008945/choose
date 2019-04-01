@@ -22,8 +22,17 @@
 		this.courseId=courseId;
 	}
 		var  course=new Course('7:00','8:40','FCC前端培训',0,1);
-		var courseArr=new Array();
-		courseArr.push(course);
+		var courseArr=[
+				<c:forEach var="admin" items="${admins}" varStatus="status">
+				<c:if test="${admins.size()-1>status.count}">
+			new Course('${admin.beginTime}','${admin.endTime}','${admin.course.name}',${admin.day},${admin.id}),
+			</c:if>
+			<c:if test="${admins.size()-1==status.count}">
+			new Course('${admin.beginTime}','${admin.endTime}','${admin.course.name}',${admin.day},${admin.id})
+			</c:if>
+			</c:forEach>
+		]
+		//courseArr.push(course);
 	</script>
 <script src="/js/scriptforcourses.js"></script>
 <script>
