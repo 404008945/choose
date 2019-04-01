@@ -117,9 +117,9 @@
 			$(".Num").eq(0).show();
 			$(".sub").attr("disabled",false);
 		})
-		$("#submit").click(function () {
-			alert(1);
-
+		$("#submit").click(function () {   //需要  用户id   adminId   还有座位号
+			var str="";
+			location
 		})
 	</script>
 </html>

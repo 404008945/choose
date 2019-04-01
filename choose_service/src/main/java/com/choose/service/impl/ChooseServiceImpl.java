@@ -25,6 +25,7 @@ public class ChooseServiceImpl implements ChooseService {
     }
 
     public int add(Choose record) {
+        //需要做冲突处理，如果冲突返回-1，否则插入
         return chooseDao.insert(record);
     }
 
@@ -46,18 +47,28 @@ public class ChooseServiceImpl implements ChooseService {
 
     public List<Integer> getRemainSeats(Integer adminId) {
         //获取所有重合的课程安排
+        SimpleDateFormat format=new SimpleDateFormat("HH:mm:ss");
+
         Admin admin = adminDao.selectByPrimaryKey(adminId);
         Integer day = admin.getDay();
         long beginTime = admin.getBeginTime().getTime();
         long endTime = admin.getEndTime().getTime();
+        System.out.println("指定开始:"+format.format(admin.getBeginTime()));
+        System.out.println("指定结束:"+format.format(admin.getEndTime()));
         //获取该天的所有课程
         List<Admin> admins = adminDao.selectByDay(day);
+        //注入自己的admin
+        admins.add(admin);
         List<Integer> choosed=new ArrayList<Integer>();
         for(Admin admin1:admins)
         {
-            if((admin1.getBeginTime().getTime()>=beginTime&&admin.getBeginTime().getTime()<endTime)
+            if((admin1.getBeginTime().getTime()>=beginTime&&admin1.getBeginTime().getTime()<endTime)
             ||(beginTime>=admin1.getBeginTime().getTime()&&beginTime<admin1.getEndTime().getTime()))
             {
+                System.out.println("冲突"+admin1.getId());
+                System.out.println("开始"+format.format(admin1.getBeginTime()));
+                System.out.println("结束"+format.format(admin1.getEndTime()));
+                System.out.println("-------------------");
                 //该插入时间与以数据库安排时间重合所选的座位
                 List<Integer> choosedSeats = chooseDao.selectChoosedSeatsByAdminId(admin1.getId());
                 choosed.addAll(choosedSeats);

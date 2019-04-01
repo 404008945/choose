@@ -68,7 +68,7 @@ public class TestDemo {
     @Test
     public void testSeats()
     {
-        List<Integer> remainSeats = chooseService.getRemainSeats(1);
+        List<Integer> remainSeats = chooseService.getRemainSeats(11);
         System.out.println(remainSeats);
     }
 }

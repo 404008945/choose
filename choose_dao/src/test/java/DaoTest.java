@@ -21,6 +21,7 @@ public class DaoTest {
     @Test
     public void test2()
     {
-
+        List<Admin> admins = adminDao.selectByCourseIdAndDay(1, 1);
+        System.out.println(admins);
     }
 }
