@@ -29,7 +29,7 @@ public class UserController {
 
     @Autowired
     private ChooseService chooseService;
-    //用户注册功能
+    //跳转到注册界面
     @RequestMapping("/registerPage")
     public String registerPage()
     {
@@ -53,12 +53,14 @@ public class UserController {
         }
     }
 
+    //跳转到登录界面
     @RequestMapping("/loginPage")
     public String loginPage()
     {
         return "login";
     }
 
+    //登录
     @RequestMapping("/login")
     public String loginPage(Model model, HttpServletRequest request)
     {
@@ -123,16 +125,16 @@ public class UserController {
         {
             //该学生尚未选课
         }else{
-
+            System.out.println(infos);
         }
         return "studentChoosed";
     }
 
     //用户开始选择座位
     @RequestMapping("/chooseSeat")
-    public String choose(Model model)
+    public String chooseSeat(Model model)
     {
-        Integer adminId=2;
+        Integer adminId=1;
         //总座位号
         Integer totalSeat = adminService.getByPrimaryKey(adminId).getTotalSeat();
         //获取所有剩余座位号
@@ -140,6 +142,26 @@ public class UserController {
         System.out.println(totalSeat);
         System.out.println(remainSeats);
         return "seat";
+    }
+
+    //课程和座位号选择后开始预约
+    @RequestMapping("/choose")
+    public String choose(Model model,HttpServletRequest request)
+    {
+        //前台需要给我这个参数
+        //Integer seatNum = Integer.valueOf(request.getParameter("seatNum"));
+        //Integer adminId= Integer.valueOf(request.getParameter("adminId"));
+        Choose choose=new Choose();
+        User user= (User) request.getSession().getAttribute("login");
+        //choose.setUserId(user.getId());
+        //虚拟注入
+        choose.setUserId(1);
+        Admin admin=adminService.getByPrimaryKey(1);
+        choose.setAdmin(admin);
+        choose.setSeatNumber(3);
+        //预约成功，跳到用户所选的所有课界面
+        chooseService.add(choose);
+        return "redirect:/user/choosed";
     }
 
     //用户删除某次选课，需传递adminId参数

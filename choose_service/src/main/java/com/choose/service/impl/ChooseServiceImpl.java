@@ -2,6 +2,7 @@ package com.choose.service.impl;
 
 import com.choose.dao.AdminDao;
 import com.choose.dao.ChooseDao;
+import com.choose.entity.Admin;
 import com.choose.entity.Choose;
 import com.choose.info.ChooseInfo;
 import com.choose.service.ChooseService;
@@ -44,18 +45,30 @@ public class ChooseServiceImpl implements ChooseService {
     }
 
     public List<Integer> getRemainSeats(Integer adminId) {
+        //获取所有重合的课程安排
+        Admin admin = adminDao.selectByPrimaryKey(adminId);
+        Integer day = admin.getDay();
+        long beginTime = admin.getBeginTime().getTime();
+        long endTime = admin.getEndTime().getTime();
+        //获取该天的所有课程
+        List<Admin> admins = adminDao.selectByDay(day);
+        List<Integer> choosed=new ArrayList<Integer>();
+        for(Admin admin1:admins)
+        {
+            if((admin1.getBeginTime().getTime()>=beginTime&&admin.getBeginTime().getTime()<endTime)
+            ||(beginTime>=admin1.getBeginTime().getTime()&&beginTime<admin1.getEndTime().getTime()))
+            {
+                //该插入时间与以数据库安排时间重合所选的座位
+                List<Integer> choosedSeats = chooseDao.selectChoosedSeatsByAdminId(admin1.getId());
+                choosed.addAll(choosedSeats);
+            }
+        }
         List<Integer> list1=new ArrayList<Integer>();
         for(int i=1;i<=adminDao.selectAll().get(0).getTotalSeat();i++)
         {
             list1.add(i);
         }
-        List<Integer> list2=new ArrayList<Integer>();
-        List<Choose> chooses = chooseDao.selectStatusById(adminId);
-        for(Choose choose:chooses)
-        {
-            list2.add(choose.getSeatNumber());
-        }
-        list1.removeAll(list2);
+        list1.removeAll(choosed);
         return list1;
     }
 

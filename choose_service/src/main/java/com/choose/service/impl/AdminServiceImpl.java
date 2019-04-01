@@ -78,26 +78,8 @@ public class AdminServiceImpl implements AdminService {
     }
 
     public List<AdminInfo> getByDay(Integer day) {
-        SimpleDateFormat format=new SimpleDateFormat("HH:mm");
-        List<AdminInfo> infos=new ArrayList<AdminInfo>();
         List<Admin> admins = adminDao.selectByDay(day);
-        for(Admin admin:admins)
-        {
-            AdminInfo adminInfo=new AdminInfo();
-            Date beginTime = admin.getBeginTime();
-            String beginTimeStr=format.format(beginTime);
-            Date endTime = admin.getEndTime();
-            String endTimeStr=format.format(endTime);
-            adminInfo.setDay(day);
-            adminInfo.setAdminId(admin.getId());
-            adminInfo.setRemainSeats(30-chooseDao.selectRemainSeatsByAdminId(admin.getId()));
-            adminInfo.setBeginTime(beginTimeStr);
-            adminInfo.setEndTime(endTimeStr);
-            adminInfo.setCourseName(admin.getCourse().getName());
-            adminInfo.setTeacherName(admin.getTeacher().getName());
-            infos.add(adminInfo);
-        }
-        return infos;
+        return common(admins);
     }
 
     public List<Admin> getByCourseIdAndDay(Integer courseId,Integer day) {
@@ -105,9 +87,15 @@ public class AdminServiceImpl implements AdminService {
     }
 
     public List<AdminInfo> getByTeacherId(Integer teacherId) {
-        SimpleDateFormat format=new SimpleDateFormat("HH:mm");
-        List<AdminInfo> infos=new ArrayList<AdminInfo>();
         List<Admin> admins = adminDao.selectByTeacherId(teacherId);
+        return common(admins);
+    }
+
+    //提取出来的通用方法
+    public List<AdminInfo> common(List<Admin> admins)
+    {
+        List<AdminInfo> infos=new ArrayList<AdminInfo>();
+        SimpleDateFormat format=new SimpleDateFormat("HH:mm");
         for(Admin admin:admins)
         {
             AdminInfo adminInfo=new AdminInfo();
@@ -116,6 +104,8 @@ public class AdminServiceImpl implements AdminService {
             Date endTime = admin.getEndTime();
             String endTimeStr=format.format(endTime);
             adminInfo.setDay(admin.getDay());
+            adminInfo.setAdminId(admin.getId());
+            adminInfo.setRemainSeats(30-chooseDao.selectRemainSeatsByAdminId(admin.getId()));
             adminInfo.setBeginTime(beginTimeStr);
             adminInfo.setEndTime(endTimeStr);
             adminInfo.setCourseName(admin.getCourse().getName());

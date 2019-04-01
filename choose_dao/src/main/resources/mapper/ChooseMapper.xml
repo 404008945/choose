@@ -18,7 +18,7 @@
             useGeneratedKeys="true">
     insert into `choose` (user_id, seat_number, admin_id
       )
-    values (#{userId,jdbcType=INTEGER}, #{seatNumber,jdbcType=INTEGER}, #{adminId,jdbcType=INTEGER}
+    values (#{userId,jdbcType=INTEGER}, #{seatNumber,jdbcType=INTEGER}, #{admin.id,jdbcType=INTEGER}
       )
   </insert>
     <update id="update">
@@ -48,6 +48,12 @@
     from choose
     where admin_id=#{adminId};
   </select>
+
+    <select id="selectChoosedSeatsByAdminId" resultType="java.lang.Integer">
+        SELECT seat_number
+        from choose
+        where admin_id=#{adminId};
+    </select>
 
     <select id="selectByUserId" resultMap="BaseResultMap">
     select *

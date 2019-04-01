@@ -7,6 +7,7 @@ import com.choose.info.AdminInfo;
 import com.choose.service.AdminService;
 import com.choose.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -83,5 +84,15 @@ public class AdminController {
         //如果教师想要删除课程，需告诉学生让学生先删除
         adminService.removeByPrimaryKey(adminId);
         return "redirect:/admin/detailByDay/1";
+    }
+
+    //管理员查看自己所安排的课程,此处应该有删除自己所选某门课的选项
+    @RequestMapping("/teacherCourses")
+    public String teacherCourse(HttpServletRequest request,Model model)
+    {
+        //Teacher teacher = (Teacher) request.getSession().getAttribute("login");
+        List<AdminInfo> teacherCourses = adminService.getByTeacherId(2);
+        model.addAttribute("teacherCourses",teacherCourses);
+        return "";
     }
 }

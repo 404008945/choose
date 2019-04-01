@@ -64,4 +64,11 @@ public class TestDemo {
         int result=adminService.add(admin);
         System.out.println(result);
     }
+    //选座功能测试
+    @Test
+    public void testSeats()
+    {
+        List<Integer> remainSeats = chooseService.getRemainSeats(1);
+        System.out.println(remainSeats);
+    }
 }

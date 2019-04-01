@@ -29,4 +29,6 @@ public interface ChooseDao {
 
     //根据userId和adminId来删除用户的某次选课
     int deleteByUserIdAndAdminId(@Param("userId") Integer userId, @Param("adminId") Integer adminId);
+
+    List<Integer> selectChoosedSeatsByAdminId(Integer adminId);
 }
