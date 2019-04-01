@@ -60,7 +60,7 @@
 		}
 		
 	</style>
-	<body>
+	<body style="background: #343636;">
 	<jsp:include page="nav.jsp"/>
 		<div class="room">
 			<div class="tip">
@@ -72,7 +72,7 @@
          <div class="room">
 			 <h3 class="Num" style="display: none;">您选择的座位是<span class="seatNum">*</span>号机</h3>
 			  <h3 class="Num">您尚未选择座位</h3>
-			  <button class="btn btn-primary btn-lg pull-right sub"  disabled="true">提交</button>
+			  <button class="btn btn-primary btn-lg pull-right sub"  disabled="true" id="submit">提交</button>
 		 </div>		
 	</body>
 	<script type="text/javascript">
@@ -85,16 +85,22 @@
 			$(".room").css({'width':width*0.95});
 		}
 		//拿到座位总数,已经选择座位的数组
-		var total=20;
+		var total=${totalSeat};
+		var freeArr=${remainSeats};
 		var oneRow=10;//一行的电脑数量
 		for(var i=0;i<total;i++)
 		{
 			var str="";
-			if(i%oneRow==0)
+			if(i%oneRow==0)//重新开始一行
 			{
 				str="style='margin-left:0px'";
 			}
+
+			if(freeArr.indexOf(i+1)!=-1)
 			$(".room").eq(0).append("<div class='seat'"+str+">"+(i+1)+"</div>");
+			else{
+				$(".room").eq(0).append("<div class='seat choosed'"+str+">"+(i+1)+"</div>");
+			}
 		}
 		
 		var choosed=false;
@@ -111,6 +117,9 @@
 			$(".Num").eq(0).show();
 			$(".sub").attr("disabled",false);
 		})
-		
+		$("#submit").click(function () {
+			alert(1);
+
+		})
 	</script>
 </html>

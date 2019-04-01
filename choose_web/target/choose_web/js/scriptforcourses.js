@@ -90,7 +90,7 @@ function  addCourse(course){
 	var color=colorArr[colorIdx];
 	colorIdx=(colorIdx+1)%colorArr.length;
 	var base;
-	var l=45+dwidth*course.dateNum;
+	var l=45+(dwidth*(course.dateNum));
 	var s=parseInt(course.startTime.split(":")[0]);
 	
 	var sh=0;

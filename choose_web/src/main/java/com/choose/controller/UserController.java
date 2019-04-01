@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -105,6 +106,7 @@ public class UserController {
     {
         Integer courseId = Integer.valueOf(request.getParameter("courseId"));
         List<Admin> plans = adminService.getByCourseId(courseId);
+
         System.out.println(plans);
         model.addAttribute("admins",plans);
         return "index";
@@ -132,13 +134,14 @@ public class UserController {
 
     //用户开始选择座位
     @RequestMapping("/chooseSeat")
-    public String choose(Model model)
+    public String choose(Model model, @RequestParam("adminId")   Integer adminId)
     {
-        Integer adminId=2;
         //总座位号
         Integer totalSeat = adminService.getByPrimaryKey(adminId).getTotalSeat();
         //获取所有剩余座位号
         List<Integer> remainSeats = chooseService.getRemainSeats(adminId);
+        model.addAttribute("totalSeat",totalSeat);
+        model.addAttribute("remainSeats",remainSeats.toString());
         System.out.println(totalSeat);
         System.out.println(remainSeats);
         return "seat";

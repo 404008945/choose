@@ -55,7 +55,6 @@ public class AdminController {
     {
         return "redirect:/detail/";
     }
-
     //进入某一天课详情界面
     @RequestMapping("/detailByDay/{day}")
     public String detail(@PathVariable("day")Integer day, Model model)
@@ -65,7 +64,6 @@ public class AdminController {
         model.addAttribute("day",day);
         return "AllCourse";
     }
-
     //跳到添加新课程界面
     @RequestMapping("/addPage")
     public String addCourse(Model model)
