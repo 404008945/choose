@@ -21,7 +21,6 @@ import java.util.List;
 public class AdminController {
     @Autowired
     private AdminService adminService;
-
     @Autowired
     private CourseService courseService;
     //管理员添加课程安排

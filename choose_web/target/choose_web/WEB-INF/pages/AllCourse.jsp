@@ -28,13 +28,11 @@
         .container .className {
             color: #3CD2DD;
         }
-
     </style>
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
 <!--可以展示出所有的课程  用于管理员的管理和教师对课程的参考 -->
-<h1>hello</h1>
 <div class="container">
     <h3 class="text-center">全部课程</h3>
     <c:if test="${message!=null}">
