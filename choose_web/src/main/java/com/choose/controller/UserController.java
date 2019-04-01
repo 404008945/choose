@@ -107,6 +107,7 @@ public class UserController {
     {
         Integer courseId = Integer.valueOf(request.getParameter("courseId"));
         List<Admin> plans = adminService.getByCourseId(courseId);
+        model.addAttribute("admins",plans);
         return "index";
     }
 
@@ -139,6 +140,8 @@ public class UserController {
         Integer totalSeat = adminService.getByPrimaryKey(adminId).getTotalSeat();
         //获取所有剩余座位号
         List<Integer> remainSeats = chooseService.getRemainSeats(adminId);
+        model.addAttribute("totalSeat",totalSeat);
+        model.addAttribute("remainSeats",remainSeats.toString());
         System.out.println(totalSeat);
         System.out.println(remainSeats);
         return "seat";
