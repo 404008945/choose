@@ -32,6 +32,11 @@
 			</c:if>
 			</c:forEach>
 		]
+
+    // for(var i=0;i<courseArr.length;i++)
+    // {
+    //     courseArr[i]=
+    // }
 		//courseArr.push(course);
 	</script>
 <script src="/js/scriptforcourses.js"></script>
