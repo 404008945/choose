@@ -1,5 +1,6 @@
 package com.choose.dao;
 
+import com.choose.entity.Admin;
 import com.choose.entity.Choose;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -31,4 +32,7 @@ public interface ChooseDao {
     int deleteByUserIdAndAdminId(@Param("userId") Integer userId, @Param("adminId") Integer adminId);
 
     List<Integer> selectChoosedSeatsByAdminId(Integer adminId);
+
+    //通过用户id和day来获取该用户的选课情况,用于做选课冲突
+    List<Admin> selectByUserIdAndDay(@Param("userId")Integer userId,@Param("day")Integer day);
 }

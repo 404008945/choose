@@ -16,6 +16,7 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     public int add(Teacher record) {
+        //设置教师默认密码
         record.setPassword("123456");
         return teacherDao.insert(record);
     }

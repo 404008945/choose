@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public int add(User record) {
-        record.setPassword("123456");
+        //测试事务
         return userDao.insert(record);
     }
 

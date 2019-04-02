@@ -25,7 +25,20 @@ public class ChooseServiceImpl implements ChooseService {
     }
 
     public int add(Choose record) {
+        Admin admin = record.getAdmin();
+        long beginTime = admin.getBeginTime().getTime();
+        long endTime = admin.getEndTime().getTime();
         //需要做冲突处理，如果冲突返回-1，否则插入
+        List<Admin> admins = chooseDao.selectByUserIdAndDay(record.getUserId(), record.getAdmin().getDay());
+        for(Admin admin1:admins)
+        {
+            if((beginTime>=admin1.getBeginTime().getTime()&&beginTime<admin1.getEndTime().getTime())||
+            admin1.getBeginTime().getTime()>=beginTime&&admin1.getBeginTime().getTime()<endTime)
+            {
+                //有冲突
+                return -1;
+            }
+        }
         return chooseDao.insert(record);
     }
 
@@ -110,5 +123,9 @@ public class ChooseServiceImpl implements ChooseService {
 
     public int removeByUserIdAndAdminId(Integer userId, Integer adminId) {
         return chooseDao.deleteByUserIdAndAdminId(userId,adminId);
+    }
+
+    public List<Admin> getByUserIdAndDay(Integer userId, Integer day) {
+        return chooseDao.selectByUserIdAndDay(userId,day);
     }
 }

@@ -165,14 +165,23 @@ public class UserController {
         if(result==1)
         {
             //支付成功
+            Integer adminId=1;
+            Integer seatNumber=1;
+            Admin admin = adminService.getByPrimaryKey(adminId);
             Choose choose=new Choose();
+            choose.setAdmin(admin);
+            choose.setSeatNumber(seatNumber);
+            //从session域中取用户
+            choose.setUserId(1);
             //设置choose参数并保存
             int i=chooseService.add(choose);
             if(i==-1)
             {
                 //选课时间冲突，告知用户
+                model.addAttribute("message","选课时间与您已选的相关课程冲突，请重新选择");
             }else{
-                //选课成功
+                //选课成功，跳转到用户所选择的课程界面
+                model.addAttribute("message","选课成功");
             }
         }else{
             //支付失败，跳转信息提示界面或再支付界面

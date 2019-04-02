@@ -1,9 +1,9 @@
-import com.choose.dao.AdminDao;
 import com.choose.entity.*;
 import com.choose.info.AdminInfo;
 import com.choose.service.AdminService;
 import com.choose.service.ChooseService;
 import com.choose.service.LoginService;
+import com.choose.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +24,8 @@ public class TestDemo {
     private ChooseService chooseService;
     @Autowired
     private LoginService loginService;
+    @Autowired
+    private UserService userService;
     @Test
     public void test2()
     {
@@ -70,5 +72,28 @@ public class TestDemo {
     {
         List<Integer> remainSeats = chooseService.getRemainSeats(11);
         System.out.println(remainSeats);
+    }
+
+    //用户选课冲突测试
+    @Test
+    public void test()
+    {
+        Choose choose=new Choose();
+        choose.setAdmin(adminService.getByPrimaryKey(18));
+        choose.setUserId(1);
+        int add = chooseService.add(choose);
+        System.out.println(add);
+    }
+
+    //事务测试
+    @Test
+    public void test1()
+    {
+        User user=new User();
+        user.setPassword("r3rw");
+        user.setAccount("geqttqe");
+        user.setName("你好");
+        user.setPhone("2141212412");
+        userService.add(user);
     }
 }

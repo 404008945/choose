@@ -71,4 +71,11 @@
         delete from choose
         where user_id=#{userId} and admin_id=#{adminId}
     </delete>
+    <!--用于做用户选课冲突时使用-->
+    <select id="selectByUserIdAndDay" resultMap="com.choose.dao.AdminDao.BaseResultMap">
+       SELECT admin.id, admin.begin_time,admin.end_time,admin.course_id,admin.teacher_id,admin.end_time,admin.total_seat
+       FROM choose,admin
+       where user_id=#{userId} and choose.admin_id=admin.id
+       and admin.`day`=#{day};
+    </select>
 </mapper>
