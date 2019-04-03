@@ -128,4 +128,8 @@ public class ChooseServiceImpl implements ChooseService {
     public int removeByUserIdAndAdminId(Integer userId, Integer adminId) {
         return chooseDao.deleteByUserIdAndAdminId(userId,adminId);
     }
+
+    public List<Admin> getByUserIdAndDay(Integer userId, Integer day) {
+        return null;
+    }
 }
