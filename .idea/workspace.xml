@@ -7,21 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bdfc06b-5c9f-49bf-80c5-662e55aa20ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/DeleteTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_dao/src/main/java/com/choose/dao/ChooseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/choose_dao/src/main/java/com/choose/dao/ChooseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_dao/src/main/java/com/choose/entity/Choose.java" beforeDir="false" afterPath="$PROJECT_DIR$/choose_dao/src/main/java/com/choose/entity/Choose.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_dao/src/main/resources/mapper/ChooseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/choose_dao/src/main/resources/mapper/ChooseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_dao/src/test/java/DaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/choose_dao/src/test/java/DaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_dao/target/test-classes/DaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/choose_dao/target/test-classes/DaoTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_service/src/main/java/com/choose/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/choose_service/src/main/java/com/choose/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_service/src/main/java/com/choose/service/impl/ChooseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/choose_service/src/main/java/com/choose/service/impl/ChooseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_service/src/main/java/com/choose/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/choose_service/src/main/java/com/choose/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_service/src/test/java/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/choose_service/src/test/java/TestDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_service/target/classes/com/choose/service/impl/CourseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/choose_service/target/classes/com/choose/service/impl/CourseServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_service/target/classes/com/choose/service/impl/TeacherServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/choose_service/target/classes/com/choose/service/impl/TeacherServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_web/src/main/java/com/choose/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/choose_web/src/main/java/com/choose/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/LoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/choose_web/src/main/resources/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/choose_web/src/main/resources/spring-web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_dao/target/classes/com/choose/dao/ChooseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/choose_dao/target/classes/com/choose/dao/ChooseDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_dao/target/classes/com/choose/entity/Choose.class" beforeDir="false" afterPath="$PROJECT_DIR$/choose_dao/target/classes/com/choose/entity/Choose.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_dao/target/classes/mapper/ChooseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/choose_dao/target/classes/mapper/ChooseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_service/target/classes/com/choose/service/impl/ChooseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/choose_service/target/classes/com/choose/service/impl/ChooseServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_service/target/test-classes/TestDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/choose_service/target/test-classes/TestDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_web/target/choose_web/WEB-INF/classes/com/choose/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/choose_web/target/choose_web/WEB-INF/classes/com/choose/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_web/target/choose_web/WEB-INF/classes/com/choose/global/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/choose_web/target/choose_web/WEB-INF/classes/com/choose/global/LoginInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_web/target/choose_web/WEB-INF/classes/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/choose_web/target/choose_web/WEB-INF/classes/spring-web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_web/target/choose_web/WEB-INF/lib/choose_dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/choose_web/target/choose_web/WEB-INF/lib/choose_dao-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_web/target/choose_web/WEB-INF/lib/choose_service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/choose_web/target/choose_web/WEB-INF/lib/choose_service-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_web/target/classes/com/choose/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/choose_web/target/classes/com/choose/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_web/target/classes/com/choose/global/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/choose_web/target/classes/com/choose/global/LoginInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/choose_web/target/classes/spring-web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/choose_web/target/classes/spring-web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,16 +61,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5490" />
+          <entry key="java" value="5496" />
           <entry key="properties" value="3" />
-          <entry key="txt" value="157" />
+          <entry key="txt" value="196" />
           <entry key="xml" value="493" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5490" />
-          <entry key="PLAIN_TEXT" value="157" />
+          <entry key="JAVA" value="5496" />
+          <entry key="PLAIN_TEXT" value="196" />
           <entry key="Properties" value="3" />
           <entry key="SQL" value="2" />
           <entry key="XML" value="491" />
@@ -86,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/choose_web/src/main/java/com/choose/controller/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-418">
-              <caret line="112" column="14" lean-forward="true" selection-start-line="112" selection-start-column="14" selection-end-line="112" selection-end-column="14" />
+            <state relative-caret-position="254">
+              <caret line="124" column="18" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/DeleteTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state relative-caret-position="168">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#439#440#0" expanded="true" />
@@ -135,8 +135,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/LoginInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="448">
+              <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,11 +171,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/choose_web/src/main/java/com/choose/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+            <state relative-caret-position="980">
+              <caret line="83" column="23" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
               <folding>
                 <element signature="e#1498#1499#0" expanded="true" />
                 <element signature="e#1528#1529#0" expanded="true" />
@@ -251,7 +251,6 @@
         <option value="$PROJECT_DIR$/choose_service/src/main/java/com/choose/service/ChooseService.java" />
         <option value="$PROJECT_DIR$/choose_service/src/main/java/com/choose/service/impl/TeacherServiceImpl.java" />
         <option value="$PROJECT_DIR$/choose_service/src/main/java/com/choose/service/impl/CourseServiceImpl.java" />
-        <option value="$PROJECT_DIR$/choose_web/src/main/java/com/choose/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/choose_dao/src/main/java/com/choose/entity/Choose.java" />
         <option value="$PROJECT_DIR$/choose_service/src/main/java/com/choose/service/impl/ChooseServiceImpl.java" />
         <option value="$PROJECT_DIR$/choose_service/src/main/java/com/choose/service/UserService.java" />
@@ -262,8 +261,9 @@
         <option value="$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/DeleteTask.java" />
         <option value="$PROJECT_DIR$/choose_web/src/main/resources/spring-web.xml" />
         <option value="$PROJECT_DIR$/choose_dao/src/test/java/DaoTest.java" />
-        <option value="$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/LoginInterceptor.java" />
         <option value="$PROJECT_DIR$/choose_web/src/main/java/com/choose/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/choose_web/src/main/java/com/choose/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/LoginInterceptor.java" />
       </list>
     </option>
   </component>
@@ -585,7 +585,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554292216663" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554293527695" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../poetry" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -783,7 +783,7 @@
       <workItem from="1554006281276" duration="7987000" />
       <workItem from="1554108153865" duration="4286000" />
       <workItem from="1554187268819" duration="5750000" />
-      <workItem from="1554272682098" duration="11245000" />
+      <workItem from="1554272682098" duration="13041000" />
     </task>
     <task id="LOCAL-00001" summary="111">
       <created>1553950872924</created>
@@ -827,7 +827,14 @@
       <option name="project" value="LOCAL" />
       <updated>1554279629049</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="1.增加了定时任务来删除已过期课程&#10;2.增加拦截器网页访问更加安全">
+      <created>1554292347919</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554292347919</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -863,7 +870,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60338000" />
+    <option name="totallyTimeSpent" value="62134000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -876,6 +883,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49604222" visible="true" weight="0.2523427" />
       <window_info id="Structure" order="1" sideWeight="0.5039578" side_tool="true" weight="0.27828056" />
@@ -888,7 +896,7 @@
       <window_info id="JRebel" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.14037433" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31016043" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.20989305" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -931,7 +939,8 @@
     <MESSAGE value="1.用户支付跳转&#10;2.用户课程冲突稍后将会完善&#10;3.座位的冲突判断" />
     <MESSAGE value="1.用户课程冲突功能已经完善&#10;2.采用事务" />
     <MESSAGE value="1.并发情况下的选座问题冲突已解决&#10;2.教师注册功能已完善&#10;3.过期课程触发删除已完善&#10;4.课程添加功能已完善" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.并发情况下的选座问题冲突已解决&#10;2.教师注册功能已完善&#10;3.过期课程触发删除已完善&#10;4.课程添加功能已完善" />
+    <MESSAGE value="1.增加了定时任务来删除已过期课程&#10;2.增加拦截器网页访问更加安全" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.增加了定时任务来删除已过期课程&#10;2.增加拦截器网页访问更加安全" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1245,16 +1254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/choose_web/src/main/java/com/choose/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-418">
-          <caret line="112" column="14" lean-forward="true" selection-start-line="112" selection-start-column="14" selection-end-line="112" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/choose_dao/src/test/java/DaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -1283,22 +1282,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/DeleteTask.java">
+    <entry file="file://$PROJECT_DIR$/choose_web/src/main/java/com/choose/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="254">
+          <caret line="124" column="18" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1307,11 +1294,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/choose_web/src/main/java/com/choose/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        <state relative-caret-position="980">
+          <caret line="83" column="23" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
           <folding>
             <element signature="e#1498#1499#0" expanded="true" />
             <element signature="e#1528#1529#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose_web/src/main/java/com/choose/global/DeleteTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
           </folding>
         </state>
       </provider>
