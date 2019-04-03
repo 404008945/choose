@@ -20,5 +20,5 @@ public interface UserService {
 
     User getByAccount(String account);
 
-    public void removePassChoose(Integer userId);
+    public void removePassChoose();
 }

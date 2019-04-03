@@ -39,6 +39,6 @@ public interface ChooseDao {
     //查询同adminId和seatNumber的人数
     int selectCountByAdminIdAndSeatNumber(@Param("adminId") Integer adminId,@Param("seatNumber") Integer seatNumber);
 
-    //删除过期课程
-    void deletePassCourse(@Param("userId") Integer userId,@Param("day") Integer day);
+    //删除指定日期之前的选课记录
+    void deleteByDate(@Param("date") String date);
 }

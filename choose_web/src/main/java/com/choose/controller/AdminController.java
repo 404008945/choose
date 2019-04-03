@@ -120,6 +120,10 @@ public class AdminController {
     //教师注册
     @RequestMapping("/register")
     public String register(Teacher teacher, Model model) {
+        if(teacher.getAccount()==null||teacher.getAccount().equals("")||teacher.getPassword()==null||teacher.getPassword().equals(""))
+        {
+            return "register";
+        }
         String account = teacher.getAccount();
         Teacher teacher1 = teacherService.getByAccount(account);
         if (teacher1 != null) {

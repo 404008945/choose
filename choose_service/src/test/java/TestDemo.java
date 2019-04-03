@@ -140,4 +140,11 @@ public class TestDemo {
         int i = calendar.get(Calendar.DAY_OF_WEEK);
         System.out.println(i-1);
     }
+
+    //过期选课删除测试
+    @Test
+    public void test9()
+    {
+        userService.removePassChoose();
+    }
 }

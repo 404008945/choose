@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -48,6 +49,8 @@ public class ChooseServiceImpl implements ChooseService {
                 return -1;
             }
         }
+        //设置选课时间
+        record.setDate(new Date());
         return chooseDao.insert(record);
     }
 

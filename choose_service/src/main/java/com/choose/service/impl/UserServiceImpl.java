@@ -9,7 +9,9 @@ import com.choose.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -44,17 +46,11 @@ public class UserServiceImpl implements UserService {
         return userDao.selectByAccount(account);
     }
 
-    public void removePassChoose(Integer userId) {
-        //删除过期课程
-        Calendar calendar = Calendar.getInstance();
-        int day = calendar.get(Calendar.DAY_OF_WEEK);
-        day--;
-        if(day==0)
-        {
-            //周日
-            day=7;
-        }
-        chooseDao.deletePassCourse(userId,day);
+    public void removePassChoose() {
+        SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
+        Date date=new Date();
+        String dateStr = format.format(date);
+        chooseDao.deleteByDate(dateStr);
     }
 
 }

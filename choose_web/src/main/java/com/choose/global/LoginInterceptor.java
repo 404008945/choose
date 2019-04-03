@@ -9,7 +9,27 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        return true;
+        //必须登录才能访问网址
+        if (request.getSession().getAttribute("login") == null) {
+            request.setAttribute("message","必须登录才能选课哦");
+            request.getRequestDispatcher("/user/loginPage").forward(request,response);
+            return false;
+        } else {
+            String servletPath = request.getServletPath();
+            Integer type = (Integer) request.getSession().getAttribute("type");
+            if (servletPath.contains("admin")) {
+                //老师才能进入此页面
+                if (type==1) {
+                    return true;
+                } else {
+                    //跳转到无权限访问界面
+                    request.setAttribute("message","您没有此权限访问此页面");
+                    request.getRequestDispatcher("/user/loginPage").forward(request,response);
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 
     @Override

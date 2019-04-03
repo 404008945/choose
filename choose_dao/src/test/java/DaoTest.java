@@ -25,11 +25,4 @@ public class DaoTest {
         List<Admin> admins = adminDao.selectByCourseIdAndDay(1, 1);
         System.out.println(admins);
     }
-
-    //过期课程删除测试
-    @Test
-    public void test3()
-    {
-        chooseDao.deletePassCourse(2,2);
-    }
 }

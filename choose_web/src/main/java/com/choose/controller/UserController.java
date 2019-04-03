@@ -39,6 +39,10 @@ public class UserController {
     //注册
     @RequestMapping("/register")
     public String register(User user, Model model) {
+        if(user.getAccount()==null||user.getAccount().equals("")||user.getPassword()==null||user.getPassword().equals(""))
+        {
+            return "register";
+        }
         User user1 = userService.getByAccount(user.getAccount());
         if (user1 != null) {
             //账户已经被注册
@@ -69,7 +73,7 @@ public class UserController {
                 User user = loginService.login(account, password, 0);
                 if (user != null) {
                     //删除已选课程
-                    userService.removePassChoose(user.getId());
+                    userService.removePassChoose();
                     //登录成功
                     //选课
                     List<Course> courses = courseService.getAll();
