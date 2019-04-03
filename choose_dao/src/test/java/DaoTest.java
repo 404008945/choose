@@ -17,11 +17,19 @@ import java.util.List;
 public class DaoTest {
     @Autowired
     private AdminDao adminDao;
-
+    @Autowired
+    private ChooseDao chooseDao;
     @Test
     public void test2()
     {
         List<Admin> admins = adminDao.selectByCourseIdAndDay(1, 1);
         System.out.println(admins);
+    }
+
+    //过期课程删除测试
+    @Test
+    public void test3()
+    {
+        chooseDao.deletePassCourse(2,2);
     }
 }

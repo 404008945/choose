@@ -35,4 +35,10 @@ public interface ChooseDao {
 
     //通过用户id和day来获取该用户的选课情况,用于做选课冲突
     List<Admin> selectByUserIdAndDay(@Param("userId")Integer userId,@Param("day")Integer day);
+
+    //查询同adminId和seatNumber的人数
+    int selectCountByAdminIdAndSeatNumber(@Param("adminId") Integer adminId,@Param("seatNumber") Integer seatNumber);
+
+    //删除过期课程
+    void deletePassCourse(@Param("userId") Integer userId,@Param("day") Integer day);
 }

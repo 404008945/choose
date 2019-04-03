@@ -78,4 +78,15 @@
        where user_id=#{userId} and choose.admin_id=admin.id
        and admin.`day`=#{day};
     </select>
+    <select id="selectCountByAdminIdAndSeatNumber" resultType="java.lang.Integer">
+        select count(*)
+        from choose
+        where admin_id=#{adminId} and seat_number=#{seatNumber};
+    </select>
+
+    <delete id="deletePassCourse">
+        delete choose
+        from choose,admin
+        where user_id=#{userId} and choose.admin_id=admin.id and `day`&lt;#{day};
+    </delete>
 </mapper>

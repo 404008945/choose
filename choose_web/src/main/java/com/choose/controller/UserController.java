@@ -68,6 +68,8 @@ public class UserController {
             if (type == 0) {
                 User user = loginService.login(account, password, 0);
                 if (user != null) {
+                    //删除已选课程
+                    userService.removePassChoose(user.getId());
                     //登录成功
                     //选课
                     List<Course> courses = courseService.getAll();
@@ -179,6 +181,9 @@ public class UserController {
             {
                 //选课时间冲突，告知用户
                 model.addAttribute("message","选课时间与您已选的相关课程冲突，请重新选择");
+            }else if(i==-2){
+                //座位已经被别人选了
+                model.addAttribute("message","该座位已经被别人选了，换一个吧");
             }else{
                 //选课成功，跳转到用户所选择的课程界面
                 model.addAttribute("message","选课成功");

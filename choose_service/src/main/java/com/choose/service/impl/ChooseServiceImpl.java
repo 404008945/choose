@@ -25,6 +25,15 @@ public class ChooseServiceImpl implements ChooseService {
     }
 
     public int add(Choose record) {
+        //座位冲突
+        Integer adminId = record.getAdmin().getId();
+        Integer seatNumber = record.getSeatNumber();
+        int count = chooseDao.selectCountByAdminIdAndSeatNumber(adminId, seatNumber);
+        if(count>0)
+        {
+            //座位冲突
+            return -2;
+        }
         Admin admin = record.getAdmin();
         long beginTime = admin.getBeginTime().getTime();
         long endTime = admin.getEndTime().getTime();
