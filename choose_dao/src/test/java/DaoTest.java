@@ -17,10 +17,12 @@ import java.util.List;
 public class DaoTest {
     @Autowired
     private AdminDao adminDao;
-
+    @Autowired
+    private ChooseDao chooseDao;
     @Test
     public void test2()
     {
-
+        List<Admin> admins = adminDao.selectByCourseIdAndDay(1, 1);
+        System.out.println(admins);
     }
 }

@@ -1,8 +1,10 @@
 package com.choose.service;
 
 
+import com.choose.entity.Admin;
 import com.choose.entity.Choose;
 import com.choose.info.ChooseInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -27,4 +29,6 @@ public interface ChooseService {
     Integer getRemainSeatsByAdminId(Integer adminId);
 
     int removeByUserIdAndAdminId(Integer userId,Integer adminId);
+
+    List<Admin> getByUserIdAndDay(Integer userId, Integer day);
 }
