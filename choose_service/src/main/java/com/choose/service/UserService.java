@@ -19,4 +19,6 @@ public interface UserService {
     int editByPrimaryKey(User record);
 
     User getByAccount(String account);
+
+    public void removePassChoose();
 }

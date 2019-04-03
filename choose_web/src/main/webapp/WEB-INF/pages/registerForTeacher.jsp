@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>注册老师账号</title>
+	<title>登录</title>
 	<style type="text/css">
 .login-page {
 	width: 360px;

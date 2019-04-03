@@ -122,7 +122,7 @@
                         </h3>
                         <p style="display: inline-block; ">剩余座位:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
                         </p>
-                        <button class="btn" onclick="location.href='/admin/removeCourse/${info.adminId}'" style="float: right; float: bottom;">删除</button>
+                        <button class="btn" onclick="location.href='/admin/removeCourse/${info.adminId}/${info.day}'" style="float: right; float: bottom;">删除</button>
                     </div>
                 </div>
             </c:forEach>

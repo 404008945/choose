@@ -105,7 +105,7 @@ public class AdminServiceImpl implements AdminService {
             String endTimeStr=format.format(endTime);
             adminInfo.setDay(admin.getDay());
             adminInfo.setAdminId(admin.getId());
-            adminInfo.setRemainSeats(30-chooseDao.selectRemainSeatsByAdminId(admin.getId()));
+            adminInfo.setRemainSeats(getRemainsSeat(admin.getId()));
             adminInfo.setBeginTime(beginTimeStr);
             adminInfo.setEndTime(endTimeStr);
             adminInfo.setCourseName(admin.getCourse().getName());
@@ -113,6 +113,26 @@ public class AdminServiceImpl implements AdminService {
             infos.add(adminInfo);
         }
         return infos;
+    }
+    public  int getRemainsSeat(int adminId){
+        List<Admin> admins=adminDao.selectAll();
+        Admin admin=adminDao.selectByPrimaryKey(adminId);
+        long beginTime = admin.getBeginTime().getTime();
+        long endTime = admin.getEndTime().getTime();
+        int count=0;
+
+        for(Admin a:admins)
+        {
+            boolean flag=false;
+            if((a.getBeginTime().getTime()>=beginTime&&a.getBeginTime().getTime()<endTime) ||(beginTime>=a.getBeginTime().getTime()&&beginTime<a.getEndTime().getTime()))
+                flag=true;
+            if(a.getDay()==admin.getDay()&&flag)
+            {
+                 count+=chooseDao.selectRemainSeatsByAdminId(a.getId());
+            }
+
+        }
+      return  30-count;
     }
 
     public List<Admin> getByCourseId(Integer courseId) {

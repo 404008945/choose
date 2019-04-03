@@ -88,6 +88,8 @@
 		var total=${totalSeat};
 		var freeArr=${remainSeats};
 		var oneRow=10;//一行的电脑数量
+
+		var count=0;
 		for(var i=0;i<total;i++)
 		{
 			var str="";
@@ -100,6 +102,12 @@
 			$(".room").eq(0).append("<div class='seat'"+str+">"+(i+1)+"</div>");
 			else{
 				$(".room").eq(0).append("<div class='seat choosed'"+str+">"+(i+1)+"</div>");
+				count++;
+			}
+			if(count==total)
+			{
+				alert("座位已被选完了!");
+				location="/user/chooseByOne";
 			}
 		}
 		
@@ -117,9 +125,9 @@
 			$(".Num").eq(0).show();
 			$(".sub").attr("disabled",false);
 		})
-		$("#submit").click(function () {   //需要  用户id   adminId   还有座位号
-			var str="";
-			location
+		$("#submit").click(function () {   //需要  用户id   adminId     还有拿到座位号
+            var str="/user/choose?adminId=${adminId}&seatNum="+$(".chooseing").eq(1).html();
+			location=str;
 		})
 	</script>
 </html>

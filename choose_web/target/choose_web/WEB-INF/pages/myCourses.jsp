@@ -8,22 +8,22 @@
 		
 		<title>管理全部课程</title>
 		<style>
-			.nav li{
+            .container	.nav li{
 				width: 14.2%;
 				text-align: center;
 			}
-			.nav li a{
+            .container	.nav li a{
 				padding: 10px;
 				
-			} 
-			.course{
+			}
+            .container	.course{
 					border: solid 1px #ccc;
 			}
-			.courses .time{
+            .container	.courses .time{
 				border: solid 1px #ccc;
 				background: #F7F7F7;
 			}
-			.className{
+            .container	.className{
 				color: #3CD2DD;
 			}
 			
@@ -35,17 +35,168 @@
 		<div class="container">
 			<h3 class="text-center">我的课程</h3>
 			<!-- 点那天显示那一天的课程  需要传递标记才能知道当显示的日期   -->
-			<div class="courses">	
-				<div class="course">
-					<div class="time text-center">7:00-9:00</div>
-					<div class="className text-center"><h3>FCC前端培训 <small>小赵</small> </h3>
-					<p style="display: inline-block; ">我的位置:<span style="color: #E7505A;font-size: 20px;">101</span>号机</p> 
-					<button class="btn" style="float: right; float: bottom;">取消</button>
-				</div>
-				</div>
+            <ul class="nav nav-tabs tab">
+                <li class="active" index="0">
+                    <a href="#">周一</a>
+                </li>
+                <li index="1">
+                    <a href="#">周二</a></li>
+                <li index="2">
+                    <a href="#">周三</a></li>
+                <li index="3">
+                    <a href="#">周四</a>
+                </li>
+
+                <li index="4">
+                    <a href="#">周五</a></li>
+
+                <li index="5">
+                    <a href="#">周六</a></li>
+
+                <li index="6">
+                    <a href="#">周日</a></li>
+            </ul>
+			<div class="courses">
+                <c:forEach var="info" items="${infos}">
+                    <c:if test="${info.day==1}">
+                    <div class="course">
+                        <div class="time text-center">${info.beginTime}-${info.endTime}</div>
+                        <div class="className text-center">
+                            <h3>${info.courseName}
+                                <small>${info.teacherName}</small>
+                            </h3>
+                            <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.seat}</span>
+                            </p>
+                            <button class="btn btn-sm" onclick="location.href='/user/remove/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
+                        </div>
+                    </div>
+                    </c:if>
+                </c:forEach>
+
 			</div>
+            <div class="courses" style="display: none">
+                <c:forEach var="info" items="${infos}">
+                    <c:if test="${info.day==2}">
+                        <div class="course">
+                            <div class="time text-center">${info.beginTime}-${info.endTime}</div>
+                            <div class="className text-center">
+                                <h3>${info.courseName}
+                                    <small>${info.teacherName}</small>
+                                </h3>
+                                <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.seat}</span>
+                                </p>
+                                <button class="btn btn-sm" onclick="location.href='/user/remove/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
+                            </div>
+                        </div>
+                    </c:if>
+                </c:forEach>
+
+            </div>
+            <div class="courses" style="display: none">
+                <c:forEach var="info" items="${infos}">
+                    <c:if test="${info.day==3}">
+                        <div class="course">
+                            <div class="time text-center">${info.beginTime}-${info.endTime}</div>
+                            <div class="className text-center">
+                                <h3>${info.courseName}
+                                    <small>${info.teacherName}</small>
+                                </h3>
+                                <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.seat}</span>
+                                </p>
+                                <button class="btn btn-sm" onclick="location.href='/user/remove/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
+                            </div>
+                        </div>
+                    </c:if>
+                </c:forEach>
+
+            </div>
+            <div class="courses" style="display: none">
+                <c:forEach var="info" items="${infos}">
+                    <c:if test="${info.day==4}">
+                        <div class="course">
+                            <div class="time text-center">${info.beginTime}-${info.endTime}</div>
+                            <div class="className text-center">
+                                <h3>${info.courseName}
+                                    <small>${info.teacherName}</small>
+                                </h3>
+                                <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.seat}</span>
+                                </p>
+                                <button class="btn btn-sm" onclick="location.href='/user/remove/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
+                            </div>
+                        </div>
+                    </c:if>
+                </c:forEach>
+
+            </div>
+            <div class="courses" style="display: none">
+                <c:forEach var="info" items="${infos}">
+                    <c:if test="${info.day==5}">
+                        <div class="course">
+                            <div class="time text-center">${info.beginTime}-${info.endTime}</div>
+                            <div class="className text-center">
+                                <h3>${info.courseName}
+                                    <small>${info.teacherName}</small>
+                                </h3>
+                                <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.seat}</span>
+                                </p>
+                                <button class="btn btn-sm" onclick="location.href='/user/remove/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
+                            </div>
+                        </div>
+                    </c:if>
+                </c:forEach>
+
+            </div>
+            <div class="courses" style="display: none">
+                <c:forEach var="info" items="${infos}">
+                    <c:if test="${info.day==6}">
+                        <div class="course">
+                            <div class="time text-center">${info.beginTime}-${info.endTime}</div>
+                            <div class="className text-center">
+                                <h3>${info.courseName}
+                                    <small>${info.teacherName}</small>
+                                </h3>
+                                <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.seat}</span>
+                                </p>
+                                <button class="btn btn-sm" onclick="location.href='/user/remove/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
+                            </div>
+                        </div>
+                    </c:if>
+                </c:forEach>
+
+            </div>
+            <div class="courses" style="display: none">
+                <c:forEach var="info" items="${infos}">
+                    <c:if test="${info.day==7}">
+                        <div class="course">
+                            <div class="time text-center">${info.beginTime}-${info.endTime}</div>
+                            <div class="className text-center">
+                                <h3>${info.courseName}
+                                    <small>${info.teacherName}</small>
+                                </h3>
+                                <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.seat}</span>
+                                </p>
+                                <button class="btn btn-sm" onclick="location.href='/user/remove/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
+                            </div>
+                        </div>
+                    </c:if>
+                </c:forEach>
+
+            </div>
 			
 	</div>
 			</div>
 	</body>
+   <script>
+       //点那个显示那个
+       $(".container  ul li").click(function () {
+           $(this).addClass("active").siblings().removeClass("active");
+           var index=$(this).attr("index");
+           $(".courses").hide();
+           $(".courses").eq(index).show();
+           return false;
+       });
+       <c:if test="${day!=null}">
+       $(".container  ul li").eq(${day-1}).click();
+       </c:if>
+   </script>
 </html>

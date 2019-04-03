@@ -53,10 +53,9 @@
     function test() {
         console.log($("#endTime")[0].value);
     }
-
     $("form").submit(function () {//两个判断  1  起始时间小于结束时间,  2   不能占用学生的休息时间
 
-        var start = $("#startTime")[0].value;
+        var start = $("#beginTime")[0].value;
         var end = $("#endTime")[0].value;
         var sv = start.split(":")[0] - 0;
         var ev = end.split(":")[0] - 0;

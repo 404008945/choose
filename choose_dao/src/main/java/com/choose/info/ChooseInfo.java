@@ -10,7 +10,6 @@ public class ChooseInfo {
     private Integer seat;
     //课程id用于删除使用
     private Integer adminId;
-
     public String getBeginTime() {
         return beginTime;
     }

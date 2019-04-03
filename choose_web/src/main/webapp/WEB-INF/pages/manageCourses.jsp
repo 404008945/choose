@@ -13,10 +13,6 @@
 		<div class="container">
 			<h3 class="text-center">课程管理</h3>
 			<!-- 添加课程的框-->
-			
-		
-		
-
 			</form>
 		<table class="table table-hover table-bordered">
 	<caption>全部课程管理</caption>
@@ -24,16 +20,15 @@
 		<tr>
 			<th>课程名</th>
 			<th>操作</th>
-			
 		</tr>
 	</thead>
 	<tbody>
+    <c:forEach items="${courses}" var="course">
 		<tr>
-			<td>FCC前端课程</td>
-			<td><a href="#" class="btn btn-danger">删除</a></td>
-		
+			<td>${course.name}</td>
+			<td><a href="/admin/deleteCourse/${course.id}" class="btn btn-danger">删除</a></td>
 		</tr>
-		
+    </c:forEach>
 	</tbody>
 </table>
 	<button  data-toggle="modal" data-target="#myModal" class="btn btn-info">添加课程</button>
@@ -45,12 +40,12 @@
                 <h4 class="modal-title" id="myModalLabel">添加课程</h4>
             </div>
             <div class="modal-body">
-				<form role="form" id="from1">
+				<form role="form" id="form1">
   <div class="form-group">
     <label for="name">课程名</label>
-    <input type="text" class="form-control" id="name" placeholder="请输入课程名称">
+    <input type="text" class="form-control" name="courseName" id="name" placeholder="请输入课程名称">
   </div>
-
+   <p class="tip text-danger"></p>
   <button type="submit" class="btn btn-default">提交</button>
 </form>
 			</div>
@@ -62,28 +57,27 @@
 </div>
 </div>
 	</body>
-	
 	<script>
 		$('form').submit(function(){
+			console.log($('#form1').serialize());
 			     $.ajax({
             //几个参数需要注意一下
-                type: "POST",//方法类型
+                type: "GET",//方法类型
                 dataType: "json",  //预期服务器返回的数据类型
-                url: "" ,//url
+                url: "/admin/addCourse" ,//url
                 data: $('#form1').serialize(),
                 success: function (result) {
-                    console.log(result);//打印服务端返回的数据(调试用)
-                   if(result.success)
+               //     console.log(result);//打印服务端返回的数据(调试用)
+                   if(result.success==1)
 				   {
-					   alert('创建成功');
-					   location="";
+					   location="/admin/correctPage?message=添加课程成功&url=manageCoursePage";
 				   }
 				   else{
-					       alert("该课程已存在，无需重复添加");
-					   location="";
+					     $(".tip").html("该课程已存在");
 				   }
                 },
-                error : function() {
+                error : function(err) {
+                	//console.log(err)
                     alert("出错啦");
                 }
             });
@@ -91,6 +85,5 @@
 			return false;
 		
 		})
-		
 	</script>
 </html>

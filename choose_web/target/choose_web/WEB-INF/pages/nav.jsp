@@ -25,24 +25,40 @@
     </div>
     <div class="collapse navbar-collapse" id="example-navbar-collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">选课</a></li>
-            <li><a href="/admin/addPage">新建课程(教师)</a></li>
-	
-			<li><a href="#">管理课程(管理员)</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Java <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">jmeter</a></li>
-                    <li><a href="#">EJB</a></li>
-                    <li><a href="#">Jasper Report</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">分离的链接</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">另一个分离的链接</a></li>
-                </ul>
-            </li>
+
+
+
+            <c:if test="${sessionScope.type==0}">
+            <li><a href="/user/chooseByOne">选课</a></li>
+            <li><a href="/user/choosed">我的课表</a></li>
+            <li><a href="/user/myChoosed">我选的所有课程</a></li>
+            </c:if>
+        <c:if test="${sessionScope.type==1}">
+            <li><a href="/admin/addPage">新建课程</a></li>
+            <li><a href="/admin/detailByDay/1">管理课程</a></li>
+            <li><a href="/admin/teacherCourses">我的课表</a></li>
+            <li><a href="/admin/teacherSelfCourses">我创建的所有课程</a></li>
+            <li><a href="/admin/registerPage">创建教师用户(管理员)</a></li>
+            <li><a href="/admin/manageCoursePage">管理学科(管理员)</a></li>
+        </c:if>
+            <c:if test="${sessionScope.type==null}">
+                <li><a href="/user/loginPage">登录</a></li>
+                <li><a href="/user/registerPage">注册</a></li>
+            </c:if>
+            <%--<li class="dropdown">--%>
+                <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown">--%>
+                    <%--Java <b class="caret"></b>--%>
+                <%--</a>--%>
+                <%--<ul class="dropdown-menu">--%>
+                    <%--<li><a href="#">jmeter</a></li>--%>
+                    <%--<li><a href="#">EJB</a></li>--%>
+                    <%--<li><a href="#">Jasper Report</a></li>--%>
+                    <%--<li class="divider"></li>--%>
+                    <%--<li><a href="#">分离的链接</a></li>--%>
+                    <%--<li class="divider"></li>--%>
+                    <%--<li><a href="#">另一个分离的链接</a></li>--%>
+                <%--</ul>--%>
+            <%--</li>--%>
         </ul>
     </div>
     </div>

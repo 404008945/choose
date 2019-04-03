@@ -16,7 +16,6 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     public int add(Teacher record) {
-        record.setPassword("123456");
         return teacherDao.insert(record);
     }
 

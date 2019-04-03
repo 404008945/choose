@@ -153,7 +153,22 @@ p.center {
 		<form id="login" action="/user/login" method="post" class="login-form" width="100%">
 				<input type="text" required="required" name="account" value="${user.account}" placeholder="用户名" id="user_name"/>
 				<input type="password" required="required" name="password" value="${user.password}" placeholder="密码" id="password"/>
-				<p id="logintip" class="text-danger" >${msg}</p>
+
+			  <div class="row">
+				  <div class="col-xs-6">
+					  <input type="radio" name="type"  checked id="inlineRadio1" value="0" style="display: inline"> 学生
+				  </div>
+				  <div class="col-xs-6">
+					  <input type="radio" name="type" id="inlineRadio2" value="1" style="display: inline"> 教师
+				  </div>
+			  </div>
+
+
+
+
+
+
+			<p id="logintip" class="text-danger" >${msg}</p>
 				<button id="submit">登　录</button>
 				<p class="message">还没有账户? <a href="/user/registerPage">立刻创建</a></p>
 			</form>
@@ -164,7 +179,6 @@ p.center {
 	$("#submit").click(function(){
 		$("#login").submit();
 	})
-	
 	</script>
 </body>
 </html>

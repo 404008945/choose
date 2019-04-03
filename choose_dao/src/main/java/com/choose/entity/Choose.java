@@ -1,5 +1,7 @@
 package com.choose.entity;
 
+import java.util.Date;
+
 public class Choose {
     private Integer id;
 
@@ -8,6 +10,9 @@ public class Choose {
     private Integer seatNumber;
 
     private Admin admin;
+
+    //选课时间
+    private Date date;
 
     public Integer getId() {
         return id;
@@ -41,6 +46,14 @@ public class Choose {
         this.admin = admin;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "Choose{" +
@@ -48,6 +61,7 @@ public class Choose {
                 ", userId=" + userId +
                 ", seatNumber=" + seatNumber +
                 ", admin=" + admin +
+                ", date=" + date +
                 '}';
     }
 }

@@ -1,41 +1,41 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: dell
+  Date: 2019/4/1
+  Time: 18:44
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
+<head>
+	<style>
+		.contain{
+			width: 100px;
+			height: 100px;
+			background:#4DC741;
+			border-radius: 50%;
+			overflow: hidden;
+			margin:0 auto;
+			text-align: center;
+			line-height: 100px;
+		}
+	</style>
+	<title>Title</title>
+</head>
+<body>
+<jsp:include page="nav.jsp"></jsp:include>
+<div class="contain" style="margin-top: 50px">
+	<span class="glyphicon glyphicon-remove" style="font-size: 90px;color: white;line-height: 100px;"></span>
+</div>
+<p class="text-center text-info" style="font-size: 20px">${message}</p>
 
-		
-		<title>错误页面</title>
-		<style>
-			.errPage{
-				width: 80%;
-				margin: 0 auto;
-				margin-top: 20%;
-				height: 200px;
-				position: relative;
-				
-			}
-			#text{
-				 position:absolute;
-				 height: 200px;
-				 width:200px ;
-				 top: 50px;
-				 left: 30px;
-				 
-				 
-			}
-			
-		</style>
-	</head>
-	
-	<body style="background: #0091B6; width: 100%;height: 100%;">
-	<jsp:include page="nav.jsp"/>
-	  <div class=" errPage text-center" >
-		  
-		  <span class="glyphicon glyphicon-comment" style="font-size: 200px;color: white;"></span>
-		  
-		  <div id="text" class="text-danger"  style="font-size: 20px;">出现错误了，请重新操作</div>
-	  </div>
-	</body>
+</body>
+<script>
+	$(window).load(function () {
+		setTimeout(function () {
+			location="${url}";
+		},2000)
+	});
+</script>
 </html>

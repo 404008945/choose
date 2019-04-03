@@ -15,7 +15,6 @@
    }
    var dayArr=['一','二','三','四','五','六','日'];
    var nowDay=new Date().getDay();
-  
 	var width=$(window).width();
 	var twidth=width*0.95;//表的实际宽度
 	//高度采取固定   一小时高  暂定50px
@@ -75,13 +74,11 @@ for(var i=0;i<9;i++)//画线
 	th+=50;
 }
 ctx.stroke();
-var colorArr=['#F05261','#FFD061','#52DB9A','#8A8E4','#4ADBC3','#3F51B5','#70D3E6','#F3DB49'];
-
-
+var colorArr=['#F05261','#FFD061','#52DB9A','#48A8E4','#4ADBC3','#3F51B5','#70D3E6','#F3DB49'];
 var colorIdx=0;
-
 for(var i=0;i<courseArr.length;i++)
 {
+    console.log(courseArr[i]);
 	addCourse(courseArr[i]);
 }
 
@@ -92,7 +89,6 @@ function  addCourse(course){
 	var base;
 	var l=45+(dwidth*(course.dateNum));
 	var s=parseInt(course.startTime.split(":")[0]);
-	
 	var sh=0;
 	if(s<14)
 	{
@@ -101,8 +97,6 @@ function  addCourse(course){
 		base=14;
 		sh=6*50;
 	}
-
-    
 	var m=parseInt(course.startTime.split(":")[1]);
 	s-=base;
 	var  t=30+sh+s*50+1.0*m/60*50;
@@ -113,6 +107,9 @@ function  addCourse(course){
 	var h=s1*50+1.0*m1/60*50-s*50+1.0*m/60*50;
     //知道宽高，开始绘图
 	$("#canvasW").prepend("<div class='course' courseId="+course.courseId+" style='position:absolute;border-radius:10px;background:"+color+";color:#fff;text-align:center;cursor:pointer;width:"+dwidth+"px;height:"+h+"px;left:"+l+"px;top:"+t+"px'>"+course.courseName+"<br>"+course.startTime+"-"+course.endTime+"</div>")
-
 }
+	 if(width<500)
+	 {
+		 $(".course").css({'font-size':'5px'})
+	 }
 }
