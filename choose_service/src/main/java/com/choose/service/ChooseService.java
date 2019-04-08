@@ -31,4 +31,6 @@ public interface ChooseService {
     int removeByUserIdAndAdminId(Integer userId,Integer adminId);
 
     List<Admin> getByUserIdAndDay(Integer userId, Integer day);
+
+    List<Integer> getChoosedSeatsByAdminId(Integer adminId);
 }

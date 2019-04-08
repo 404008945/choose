@@ -132,4 +132,8 @@ public class ChooseServiceImpl implements ChooseService {
     public List<Admin> getByUserIdAndDay(Integer userId, Integer day) {
         return null;
     }
+
+    public List<Integer> getChoosedSeatsByAdminId(Integer adminId) {
+        return chooseDao.selectChoosedSeatsByAdminId(adminId);
+    }
 }

@@ -88,7 +88,7 @@ public class AdminServiceImpl implements AdminService {
 
     public List<AdminInfo> getByTeacherId(Integer teacherId) {
         List<Admin> admins = adminDao.selectByTeacherId(teacherId);
-        return common(admins);
+        return common1(admins);
     }
 
     //提取出来的通用方法
@@ -114,6 +114,36 @@ public class AdminServiceImpl implements AdminService {
         }
         return infos;
     }
+
+    public List<AdminInfo> common1(List<Admin> admins)
+    {
+        List<AdminInfo> infos=new ArrayList<AdminInfo>();
+        SimpleDateFormat format=new SimpleDateFormat("HH:mm");
+        for(Admin admin:admins)
+        {
+            AdminInfo adminInfo=new AdminInfo();
+            Date beginTime = admin.getBeginTime();
+            String beginTimeStr=format.format(beginTime);
+            Date endTime = admin.getEndTime();
+            String endTimeStr=format.format(endTime);
+            adminInfo.setDay(admin.getDay());
+            adminInfo.setAdminId(admin.getId());
+            //已选座位数
+            adminInfo.setRemainSeats(getChooseNum(admin.getId()));
+            adminInfo.setBeginTime(beginTimeStr);
+            adminInfo.setEndTime(endTimeStr);
+            adminInfo.setCourseName(admin.getCourse().getName());
+            adminInfo.setTeacherName(admin.getTeacher().getName());
+            infos.add(adminInfo);
+        }
+        return infos;
+    }
+
+    //获取某一次课的选课人数
+    public  int getChooseNum(int adminId){
+        return  chooseDao.selectChooseNumByAdminId(adminId);
+    }
+
     public  int getRemainsSeat(int adminId){
         List<Admin> admins=adminDao.selectAll();
         Admin admin=adminDao.selectByPrimaryKey(adminId);

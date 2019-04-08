@@ -5,6 +5,7 @@ import com.choose.entity.Course;
 import com.choose.entity.Teacher;
 import com.choose.info.AdminInfo;
 import com.choose.service.AdminService;
+import com.choose.service.ChooseService;
 import com.choose.service.CourseService;
 import com.choose.service.TeacherService;
 import netscape.javascript.JSObject;
@@ -33,6 +34,8 @@ public class AdminController {
     private CourseService courseService;
     @Autowired
     private TeacherService teacherService;
+    @Autowired
+    private ChooseService chooseService;
     //管理员添加课程安排
     @RequestMapping("/add")
     public String add(Admin admin, Model model,HttpServletRequest request)
@@ -223,12 +226,16 @@ public class AdminController {
         model.addAttribute("message","删除成功");
         model.addAttribute("url","/admin/manageCoursePage");
         return "correctPage";
-
     }
 
-
-
-
-
-
+    //告知老师某门课的选课座位分布情况,前台需要传过来adminId
+    @RequestMapping("/chooseSeats/${adminId}")
+    public String getChooseSeats(@PathVariable("adminId")Integer adminId,Model model)
+    {
+        List<Integer> seats = chooseService.getChoosedSeatsByAdminId(adminId);
+        //已选座位
+        model.addAttribute("seats",seats);
+        //返回到座位显示界面
+        return "";
+    }
 }

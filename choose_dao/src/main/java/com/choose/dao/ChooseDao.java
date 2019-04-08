@@ -31,6 +31,7 @@ public interface ChooseDao {
     //根据userId和adminId来删除用户的某次选课
     int deleteByUserIdAndAdminId(@Param("userId") Integer userId, @Param("adminId") Integer adminId);
 
+    //根据adminId获取已选座位
     List<Integer> selectChoosedSeatsByAdminId(Integer adminId);
 
     //通过用户id和day来获取该用户的选课情况,用于做选课冲突
@@ -41,4 +42,7 @@ public interface ChooseDao {
 
     //删除指定日期之前的选课记录
     void deleteByDate(@Param("date") String date);
+
+    //获取某次选课人数
+    int selectChooseNumByAdminId(@Param("adminId")Integer adminId);
 }

@@ -89,4 +89,10 @@
         delete from choose
         where `date` &lt;#{date}
     </delete>
+
+    <select id="selectChooseNumByAdminId" resultType="java.lang.Integer">
+        select count(*)
+        from choose
+        where admin_id=#{adminId};
+    </select>
 </mapper>

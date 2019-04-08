@@ -25,4 +25,11 @@ public class DaoTest {
         List<Admin> admins = adminDao.selectByCourseIdAndDay(1, 1);
         System.out.println(admins);
     }
+
+    @Test
+    public void test3()
+    {
+        List<Integer> list = chooseDao.selectChoosedSeatsByAdminId(1);
+        System.out.println(list);
+    }
 }

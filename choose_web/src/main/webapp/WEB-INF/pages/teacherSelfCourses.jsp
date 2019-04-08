@@ -65,7 +65,7 @@
                         <h3>${info.courseName}
                             <small>${info.teacherName}</small>
                         </h3>
-                        <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
+                        <p style="display: inline-block; ">已选人数:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
                         </p>
                         <button class="btn btn-sm" onclick="location.href='/admin/removeMyCourse/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
                     </div>
@@ -83,7 +83,7 @@
                         <h3>${info.courseName}
                             <small>${info.teacherName}</small>
                         </h3>
-                        <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
+                        <p style="display: inline-block; ">已选人数:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
                         </p>
                         <button class="btn btn-sm" onclick="location.href='/admin/removeMyCourse/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
                     </div>
@@ -101,14 +101,13 @@
                         <h3>${info.courseName}
                             <small>${info.teacherName}</small>
                         </h3>
-                        <p style="display: inline-block; ">剩余:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
+                        <p style="display: inline-block; ">已选人数:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
                         </p>
                         <button class="btn btn-sm" onclick="location.href='/admin/removeMyCourse/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
                     </div>
                 </div>
             </c:if>
         </c:forEach>
-
     </div>
     <div class="courses" style="display: none">
         <c:forEach var="info" items="${infos}">
@@ -119,7 +118,7 @@
                         <h3>${info.courseName}
                             <small>${info.teacherName}</small>
                         </h3>
-                        <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
+                        <p style="display: inline-block; ">已选人数:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
                         </p>
                         <button class="btn btn-sm" onclick="location.href='/admin/removeMyCourse/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
                     </div>
@@ -137,7 +136,7 @@
                         <h3>${info.courseName}
                             <small>${info.teacherName}</small>
                         </h3>
-                        <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
+                        <p style="display: inline-block; ">已选人数:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
                         </p>
                         <button class="btn btn-sm" onclick="location.href='/admin/removeMyCourse/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
                     </div>
@@ -155,7 +154,7 @@
                         <h3>${info.courseName}
                             <small>${info.teacherName}</small>
                         </h3>
-                        <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
+                        <p style="display: inline-block; ">已选人数:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
                         </p>
                         <button class="btn btn-sm" onclick="location.href='/admin/removeMyCourse/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
                     </div>
@@ -173,7 +172,7 @@
                         <h3>${info.courseName}
                             <small>${info.teacherName}</small>
                         </h3>
-                        <p style="display: inline-block; ">我的座位号:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
+                        <p style="display: inline-block; ">已选人数:<span style="color: #E7505A;font-size: 20px;">${info.remainSeats}</span>
                         </p>
                         <button class="btn btn-sm" onclick="location.href='/admin/removeMyCourse/${info.adminId}/${info.day}'" style="float: right; float: bottom;">取消</button>
                     </div>

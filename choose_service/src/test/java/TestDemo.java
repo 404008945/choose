@@ -147,4 +147,12 @@ public class TestDemo {
     {
         userService.removePassChoose();
     }
+
+    //获取某门课程的选课座位
+    @Test
+    public void test10()
+    {
+        List<Integer> seats = chooseService.getChoosedSeatsByAdminId(1);
+        System.out.println(seats);
+    }
 }

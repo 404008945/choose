@@ -14,11 +14,6 @@
        http://www.springframework.org/schema/task/spring-task-3.2.xsd">
     <!--配置web相关-->
     <import resource="spring-service.xml"/>
-    <!--配置任务扫描-->
-    <task:annotation-driven />
-    <!--扫描任务-->
-    <context:component-scan base-package="com.choose.global" />
-    <context:annotation-config/>
     <!--静态资源处理-->
     <mvc:default-servlet-handler/>
     <!--配置任务扫描-->
